@@ -1,0 +1,1 @@
+# weather-menubar-app-creation-guide-jp
