@@ -296,6 +296,39 @@
             margin-bottom: 1rem;
         }
 
+        .copy-button {
+            position: absolute;
+            top: 1rem;
+            right: 1rem;
+            background: #667eea;
+            color: white;
+            border: none;
+            padding: 0.5rem 1rem;
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 0.8rem;
+            font-weight: 500;
+            transition: all 0.2s ease;
+            z-index: 10;
+        }
+
+        .copy-button:hover {
+            background: #5a67d8;
+            transform: translateY(-1px);
+        }
+
+        .copy-button.copied {
+            background: #48bb78;
+        }
+
+        .copyable-code {
+            position: relative;
+        }
+
+        .copyable-code pre {
+            padding-top: 3rem;
+        }
+
         @media (max-width: 768px) {
             .container {
                 margin: 0;
@@ -320,6 +353,13 @@
             
             .step {
                 padding: 2rem;
+            }
+
+            .copy-button {
+                top: 0.5rem;
+                right: 0.5rem;
+                padding: 0.4rem 0.8rem;
+                font-size: 0.7rem;
             }
         }
 
@@ -589,8 +629,9 @@ claude</code></pre>
                     <p><strong>重要:</strong> 以下のテキストをそのままコピーして、Claude Codeのプロンプトに貼り付けてください。</p>
                 </div>
 
-                <div class="error-example">
-                    <pre><code>macOSのメニューバーに現在の気温を表示するSwiftアプリを作成してください。
+                <div class="error-example copyable-code">
+                    <button class="copy-button" onclick="copyToClipboard(this, 'claude-instruction')">📋 コピー</button>
+                    <pre><code id="claude-instruction">macOSのメニューバーに現在の気温を表示するSwiftアプリを作成してください。
 
 要件：
 1. NSStatusItemを使ってメニューバーに気温を小数点第一位まで表示（例：23.5°C）
@@ -785,3 +826,60 @@ APIレスポンスの構造に合わせて、すべての関連ファイルを�
                         <li>自作アイコンが表示されているか確認</li>
                     </ul>
                 </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function copyToClipboard(button, textId) {
+            const textElement = document.getElementById(textId);
+            const textToCopy = textElement.textContent || textElement.innerText;
+            
+            // Clipboard APIを使用してテキストをコピー
+            if (navigator.clipboard && window.isSecureContext) {
+                navigator.clipboard.writeText(textToCopy).then(() => {
+                    showCopySuccess(button);
+                }).catch(() => {
+                    fallbackCopyToClipboard(textToCopy, button);
+                });
+            } else {
+                // フォールバック方法
+                fallbackCopyToClipboard(textToCopy, button);
+            }
+        }
+
+        function fallbackCopyToClipboard(text, button) {
+            const textArea = document.createElement('textarea');
+            textArea.value = text;
+            textArea.style.position = 'fixed';
+            textArea.style.left = '-999999px';
+            textArea.style.top = '-999999px';
+            document.body.appendChild(textArea);
+            textArea.focus();
+            textArea.select();
+            
+            try {
+                document.execCommand('copy');
+                showCopySuccess(button);
+            } catch (err) {
+                console.error('コピーに失敗しました:', err);
+                button.textContent = '❌ エラー';
+                setTimeout(() => {
+                    button.textContent = '📋 コピー';
+                }, 2000);
+            } finally {
+                document.body.removeChild(textArea);
+            }
+        }
+
+        function showCopySuccess(button) {
+            button.textContent = '✅ コピー完了!';
+            button.classList.add('copied');
+            setTimeout(() => {
+                button.textContent = '📋 コピー';
+                button.classList.remove('copied');
+            }, 2000);
+        }
+    </script>
+</body>
+</html>
