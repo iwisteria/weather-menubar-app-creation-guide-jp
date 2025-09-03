@@ -442,7 +442,7 @@
                         <h3>完成イメージ</h3>
                         <div class="feature-list">
                             <div class="feature-item">
-                                <strong>🌙 30.4°C 稲城</strong><br>
+                                <strong>🌙 30.4°C 渋谷</strong><br>
                                 メニューバーに天気アイコン、詳細気温、地点名を表示
                             </div>
                             <div class="feature-item">
@@ -837,7 +837,7 @@ claude --version</code></pre>
 
 要件：
 1. NSStatusItemを使ってメニューバーに気温を小数点第一位まで表示（例：23.5°C）
-2. OpenWeatherMap One Call API 3.0を使用して東京の気温を取得
+2. OpenWeatherMap One Call API 3.0を使用して渋谷の気温を取得
 3. 10分ごとに自動更新
 4. メニューバーアイコンをクリックすると詳細な天気情報（湿度、風速など）を表示
 5. アプリはバックグラウンドで動作（ドックに表示されない）
@@ -848,7 +848,7 @@ claude --version</code></pre>
 - URLSession for API calls  
 - Timer for auto-refresh
 - 温度単位：摂氏（小数点第一位まで表示）
-- 東京の座標：lat=35.6762, lon=139.6503
+- 渋谷の座標：lat=35.6583, lon=139.6972
 
 APIキーは後で設定し、アイコンも後から自作のものを追加します。気温は最初から小数点第一位まで表示するよう設定してください。</code></pre>
                 </div>
