@@ -211,6 +211,15 @@
             font-weight: 600;
         }
 
+        .step h5 {
+            color: #34495e;
+            font-size: 1rem;
+            margin: 1.2rem 0 0.6rem 0;
+            font-weight: 600;
+            border-left: 3px solid #3498db;
+            padding-left: 0.8rem;
+        }
+
         pre {
             background: #f8f9fa;
             border: 1px solid #e9ecef;
@@ -622,20 +631,91 @@ claude --version</code></pre>
                 </div>
 
                 <div class="substep">
-                    <h4>ターミナルでのディレクトリ作成</h4>
-                    <p><strong>ステップ1:</strong> ターミナルを開く（<kbd>⌘ + Space</kbd> → 「ターミナル」と入力 → Enter）</p>
-                    <p><strong>ステップ2:</strong> 以下のコマンドを順番に実行</p>
-                    <pre><code># 例：Documentsフォルダ内に開発用ディレクトリを作成
-cd ~/Documents
-mkdir -p Development
-cd Development
+                    <h4>ターミナルでのディレクトリ作成（詳細解説）</h4>
+                    
+                    <div class="info-box">
+                        <h4>🎯 この作業の目的</h4>
+                        <p>プロジェクト専用のフォルダを作成し、そこでClaude Codeを起動することで、生成されるファイルが整理され、管理しやすくなります。</p>
+                    </div>
 
-# プロジェクト用ディレクトリを作成
-mkdir WeatherMenuBar
-cd WeatherMenuBar
+                    <h5><strong>ステップ1:</strong> ターミナルを開く</h5>
+                    <ul>
+                        <li><kbd>⌘ + Space</kbd>キーを押してSpotlight検索を開く</li>
+                        <li>「ターミナル」と入力してEnterキーを押す</li>
+                        <li>黒い画面（ターミナル）が開きます</li>
+                    </ul>
 
-# 現在の場所を確認
-pwd</code></pre>
+                    <h5><strong>ステップ2:</strong> 現在位置を確認</h5>
+                    <div class="substep">
+                        <p>まず、今どこにいるかを確認しましょう：</p>
+                        <pre><code>pwd</code></pre>
+                        <p>このコマンドを入力してEnterを押すと、現在位置が表示されます（例：<code>/Users/あなたの名前</code>）</p>
+                    </div>
+
+                    <h5><strong>ステップ3:</strong> Documentsフォルダに移動</h5>
+                    <div class="substep">
+                        <p>以下のコマンドを入力してEnterを押します：</p>
+                        <pre><code>cd ~/Documents</code></pre>
+                        <div class="feature-showcase">
+                            <h4>📝 コマンドの意味</h4>
+                            <ul>
+                                <li><code>cd</code> = "change directory"（ディレクトリを変更する）</li>
+                                <li><code>~</code> = あなたのホームフォルダを表す記号</li>
+                                <li><code>~/Documents</code> = あなたのDocumentsフォルダ</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <h5><strong>ステップ4:</strong> 開発用フォルダを作成</h5>
+                    <div class="substep">
+                        <p>以下のコマンドを入力してEnterを押します：</p>
+                        <pre><code>mkdir -p Development</code></pre>
+                        <div class="feature-showcase">
+                            <h4>📝 コマンドの意味</h4>
+                            <ul>
+                                <li><code>mkdir</code> = "make directory"（フォルダを作成する）</li>
+                                <li><code>-p</code> = すでにフォルダが存在していてもエラーにならない</li>
+                                <li><code>Development</code> = 作成するフォルダの名前</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <h5><strong>ステップ5:</strong> 開発用フォルダに移動</h5>
+                    <div class="substep">
+                        <p>作成したDevelopmentフォルダに移動します：</p>
+                        <pre><code>cd Development</code></pre>
+                    </div>
+
+                    <h5><strong>ステップ6:</strong> プロジェクト専用フォルダを作成</h5>
+                    <div class="substep">
+                        <p>天気アプリ専用のフォルダを作成します：</p>
+                        <pre><code>mkdir WeatherMenuBar</code></pre>
+                    </div>
+
+                    <h5><strong>ステップ7:</strong> プロジェクトフォルダに移動</h5>
+                    <div class="substep">
+                        <p>作成したプロジェクトフォルダに移動します：</p>
+                        <pre><code>cd WeatherMenuBar</code></pre>
+                    </div>
+
+                    <h5><strong>ステップ8:</strong> 最終確認</h5>
+                    <div class="substep">
+                        <p>正しい場所にいるか確認します：</p>
+                        <pre><code>pwd</code></pre>
+                        <p>以下のような表示になれば成功です：<br>
+                        <code>/Users/あなたの名前/Documents/Development/WeatherMenuBar</code></p>
+                    </div>
+
+                    <div class="best-practices">
+                        <h4>💡 成功のコツ</h4>
+                        <ul>
+                            <li><strong>1つずつ実行:</strong> コマンドは1行ずつ、順番に実行してください</li>
+                            <li><strong>大文字小文字に注意:</strong> <code>Development</code>と<code>development</code>は別のものです</li>
+                            <li><strong>エラーが出たら:</strong> もう一度最初からやり直してください</li>
+                            <li><strong>コピペ推奨:</strong> コマンドはコピペして入力ミスを防いでください</li>
+                        </ul>
+                    </div>
+
                     <p><strong>重要:</strong> プロジェクト名に日本語や特殊文字を使わず、英数字のみを使用してください。Xcodeとの互換性を確保するためです。</p>
                 </div>
 
