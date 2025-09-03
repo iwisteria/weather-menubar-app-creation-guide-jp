@@ -4,8 +4,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>macOS Weather MenuBar App 作成ガイド</title>
-    <link rel="icon" type="image/png" href="appweather.png">
-    <link rel="apple-touch-icon" href="appweather.png">
     <style>
         * {
             margin: 0;
@@ -14,84 +12,223 @@
         }
 
         body {
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-            line-height: 1.6;
-            color: #333;
-            background: #ffffff;
-            font-size: 16px;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
+            line-height: 1.7;
+            color: #1a1a1a;
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+            min-height: 100vh;
         }
 
         .container {
-            max-width: 800px;
+            max-width: 900px;
             margin: 0 auto;
-            padding: 40px 20px;
+            background: #ffffff;
+            min-height: 100vh;
+            box-shadow: 0 0 50px rgba(0,0,0,0.1);
         }
 
-        h1 {
-            color: #1a1a1a;
-            font-size: 2.5rem;
+        .hero {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 4rem 3rem;
+            text-align: center;
+        }
+
+        .hero h1 {
+            font-size: 3rem;
             font-weight: 700;
             margin-bottom: 1rem;
-            border-bottom: 3px solid #007AFF;
-            padding-bottom: 0.5rem;
+            text-shadow: 0 2px 4px rgba(0,0,0,0.3);
         }
 
-        h2 {
-            color: #2c2c2c;
-            font-size: 1.8rem;
-            font-weight: 600;
-            margin: 2rem 0 1rem 0;
-            padding-left: 0.5rem;
-            border-left: 4px solid #007AFF;
-        }
-
-        h3 {
-            color: #444;
+        .hero p {
             font-size: 1.3rem;
-            font-weight: 600;
-            margin: 1.5rem 0 0.8rem 0;
+            opacity: 0.9;
+            max-width: 600px;
+            margin: 0 auto;
         }
 
-        h4 {
-            color: #555;
-            font-size: 1.1rem;
-            font-weight: 600;
-            margin: 1rem 0 0.5rem 0;
+        .content {
+            padding: 0 3rem 3rem 3rem;
         }
 
-        p {
+        .app-preview {
+            background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+            border-radius: 20px;
+            padding: 3rem;
+            margin: 3rem 0;
+            border: 1px solid #dee2e6;
+        }
+
+        .preview-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            margin-bottom: 2rem;
+        }
+
+        .preview-section h3 {
+            color: #2c3e50;
+            font-size: 1.5rem;
+            margin-bottom: 1.5rem;
+            text-align: center;
+        }
+
+        .feature-list {
+            space-y: 1rem;
+        }
+
+        .feature-item {
+            background: white;
+            padding: 1rem 1.5rem;
+            border-radius: 12px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.08);
             margin-bottom: 1rem;
-            color: #555;
+            border-left: 4px solid #667eea;
         }
 
-        ul, ol {
-            margin: 1rem 0 1rem 2rem;
-            color: #555;
-        }
-
-        li {
+        .feature-item strong {
+            color: #2c3e50;
+            display: block;
             margin-bottom: 0.3rem;
         }
 
-        code {
+        .no-coding-tags {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+            align-items: flex-start;
+        }
+
+        .tag {
+            background: #e8f5e8;
+            color: #2d5a2d;
+            padding: 0.7rem 1.5rem;
+            border-radius: 25px;
+            font-weight: 500;
+            border: 1px solid #c3e6c3;
+            font-size: 0.9rem;
+        }
+
+        .warning-box {
+            background: #fff3cd;
+            border: 1px solid #ffeaa7;
+            border-radius: 15px;
+            margin: 2rem 0;
+            overflow: hidden;
+        }
+
+        .warning-header {
+            background: #f39c12;
+            color: white;
+            padding: 1.2rem;
+            font-weight: 600;
+            text-align: center;
+            font-size: 1.1rem;
+        }
+
+        .warning-content {
+            padding: 2rem;
+        }
+
+        .warning-content p {
+            margin-bottom: 1rem;
+            color: #856404;
+        }
+
+        .info-box {
             background: #f8f9fa;
-            padding: 0.2rem 0.4rem;
-            border-radius: 4px;
-            font-family: 'SF Mono', Monaco, 'Cascadia Code', monospace;
-            font-size: 0.9em;
-            color: #d73a49;
-            border: 1px solid #e1e4e8;
+            border: 1px solid #dee2e6;
+            border-radius: 15px;
+            padding: 2rem;
+            margin: 2rem 0;
+        }
+
+        .info-box h4 {
+            color: #495057;
+            margin-bottom: 1rem;
+            font-size: 1.2rem;
+        }
+
+        .comparison-grid {
+            display: grid;
+            gap: 1rem;
+        }
+
+        .comparison-item {
+            background: #e9ecef;
+            padding: 1rem;
+            border-radius: 8px;
+            font-size: 0.95rem;
+            color: #495057;
+        }
+
+        .step {
+            background: white;
+            border-radius: 20px;
+            padding: 3rem;
+            margin: 3rem 0;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+            border: 1px solid #e9ecef;
+        }
+
+        .step-number {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin-bottom: 2rem;
+        }
+
+        .step h2 {
+            color: #2c3e50;
+            font-size: 2rem;
+            margin-bottom: 1.5rem;
+            border-bottom: 3px solid #667eea;
+            padding-bottom: 0.5rem;
+        }
+
+        .step h3 {
+            color: #34495e;
+            font-size: 1.4rem;
+            margin: 2rem 0 1rem 0;
+            padding-left: 1rem;
+            border-left: 4px solid #3498db;
+        }
+
+        .step h4 {
+            color: #2c3e50;
+            font-size: 1.1rem;
+            margin: 1.5rem 0 0.8rem 0;
+            font-weight: 600;
         }
 
         pre {
             background: #f8f9fa;
-            border: 1px solid #e1e4e8;
-            border-radius: 8px;
-            padding: 1rem;
-            margin: 1rem 0;
+            border: 1px solid #e9ecef;
+            border-radius: 12px;
+            padding: 1.5rem;
+            margin: 1.5rem 0;
             overflow-x: auto;
             font-family: 'SF Mono', Monaco, 'Cascadia Code', monospace;
+            font-size: 0.9rem;
+            line-height: 1.5;
+        }
+
+        code {
+            background: #f1f3f4;
+            padding: 0.3rem 0.6rem;
+            border-radius: 6px;
+            font-family: 'SF Mono', Monaco, 'Cascadia Code', monospace;
             font-size: 0.9em;
+            color: #d73a49;
+            border: 1px solid #e1e4e8;
         }
 
         pre code {
@@ -101,359 +238,468 @@
             color: #24292e;
         }
 
-        .step {
+        .substep {
             background: #f8f9fa;
             border-left: 4px solid #28a745;
-            padding: 1rem;
-            margin: 1rem 0;
-            border-radius: 0 8px 8px 0;
-        }
-
-        .warning {
-            background: #fff3cd;
-            border-left: 4px solid #ffc107;
-            padding: 1rem;
-            margin: 1rem 0;
-            border-radius: 0 8px 8px 0;
-        }
-
-        .info {
-            background: #d1ecf1;
-            border-left: 4px solid #17a2b8;
-            padding: 1rem;
-            margin: 1rem 0;
-            border-radius: 0 8px 8px 0;
-        }
-
-        .feature-list {
-            background: #f0f8ff;
-            border-radius: 8px;
             padding: 1.5rem;
-            margin: 1rem 0;
+            margin: 1.5rem 0;
+            border-radius: 0 12px 12px 0;
         }
 
-        .feature-list h4 {
-            color: #007AFF;
-            margin-top: 0;
+        .error-example {
+            background: #fff5f5;
+            border-left: 4px solid #e53e3e;
+            padding: 1.5rem;
+            margin: 1.5rem 0;
+            border-radius: 0 12px 12px 0;
         }
 
-        strong {
-            color: #1a1a1a;
-            font-weight: 600;
+        ul, ol {
+            margin: 1rem 0 1rem 2rem;
+        }
+
+        li {
+            margin-bottom: 0.5rem;
+        }
+
+        .highlight {
+            background: linear-gradient(120deg, #a8edea 0%, #fed6e3 100%);
+            padding: 0.2rem 0.5rem;
+            border-radius: 4px;
+            font-weight: 500;
+        }
+
+        .feature-showcase {
+            background: #f0f8ff;
+            border-radius: 15px;
+            padding: 2rem;
+            margin: 2rem 0;
+        }
+
+        .feature-showcase h4 {
+            color: #1e40af;
+            margin-bottom: 1rem;
+        }
+
+        .best-practices {
+            background: #f0fff4;
+            border: 1px solid #c6f6d5;
+            border-radius: 12px;
+            padding: 1.5rem;
+            margin: 1.5rem 0;
+        }
+
+        .best-practices h4 {
+            color: #276749;
+            margin-bottom: 1rem;
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                margin: 0;
+            }
+            
+            .hero {
+                padding: 3rem 2rem;
+            }
+            
+            .hero h1 {
+                font-size: 2.2rem;
+            }
+            
+            .content {
+                padding: 0 2rem 2rem 2rem;
+            }
+            
+            .preview-grid {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+            
+            .step {
+                padding: 2rem;
+            }
         }
 
         .toc {
             background: #f8f9fa;
-            border-radius: 8px;
-            padding: 1.5rem;
-            margin: 2rem 0;
+            border-radius: 15px;
+            padding: 2rem;
+            margin: 3rem 0;
+            border: 1px solid #dee2e6;
         }
 
         .toc h3 {
-            margin-top: 0;
-            color: #007AFF;
-        }
-
-        .toc ul {
-            margin-left: 1rem;
-        }
-
-        .toc a {
-            color: #007AFF;
-            text-decoration: none;
-        }
-
-        .toc a:hover {
-            text-decoration: underline;
-        }
-
-        .header-intro {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            color: white;
-            padding: 2rem;
-            border-radius: 12px;
-            margin-bottom: 2rem;
+            color: #667eea;
+            margin-bottom: 1.5rem;
             text-align: center;
+            font-size: 1.5rem;
         }
 
-        .header-intro p {
-            color: rgba(255, 255, 255, 0.9);
-            font-size: 1.1rem;
-            margin: 0;
+        .toc-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            grid-template-rows: repeat(4, 1fr);
+            grid-auto-flow: column;
+            gap: 1rem;
+        }
+
+        .toc-item {
+            background: white;
+            padding: 1rem;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+        }
+
+        .toc-item a {
+            color: #667eea;
+            text-decoration: none;
+            font-weight: 500;
+        }
+
+        .toc-item a:hover {
+            text-decoration: underline;
         }
     </style>
 </head>
 <body>
     <div class="container">
-        <div class="header-intro">
-            <h1>macOS Weather MenuBar App 作成ガイド</h1>
-            <p>Claude CodeとXcodeを使用して、メニューバーに現在気温を表示するmacOSアプリを作成する完全ガイド</p>
+        <div class="hero">
+            <h1>macOS Weather MenuBar App</h1>
+            <p>Claude CodeとXcodeを使って、プロ品質の天気アプリを作成する完全ガイド</p>
         </div>
 
-        <div class="toc">
-            <h3>目次</h3>
-            <ul>
-                <li><a href="#prerequisites">前提条件</a></li>
-                <li><a href="#setup">環境セットアップ</a></li>
-                <li><a href="#project">プロジェクト作成</a></li>
-                <li><a href="#xcode">Xcodeでプロジェクトを開く</a></li>
-                <li><a href="#errors">エラー修正</a></li>
-                <li><a href="#build">ビルド・実行</a></li>
-                <li><a href="#distribute">独立したアプリの作成</a></li>
-                <li><a href="#troubleshooting">トラブルシューティング</a></li>
-                <li><a href="#features">完成後の機能</a></li>
-            </ul>
-        </div>
+        <div class="content">
+            <div class="app-preview">
+                <div class="preview-grid">
+                    <div class="preview-section">
+                        <h3>完成イメージ</h3>
+                        <div class="feature-list">
+                            <div class="feature-item">
+                                <strong>🌙 30.4°C 稲城</strong><br>
+                                メニューバーに天気アイコン、詳細気温、地点名を表示
+                            </div>
+                            <div class="feature-item">
+                                <strong>詳細情報表示</strong><br>
+                                体感温度、湿度、風速、気圧などをクリックで確認
+                            </div>
+                            <div class="feature-item">
+                                <strong>自動更新機能</strong><br>
+                                10分ごとに最新の気象情報に自動更新
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="preview-section">
+                        <h3>プログラミング不要</h3>
+                        <div class="no-coding-tags">
+                            <div class="tag">AIが全コード生成</div>
+                            <div class="tag">エラー修正も自動</div>
+                            <div class="tag">手動編集なし</div>
+                            <div class="tag">学習体験</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
 
-        <section id="prerequisites">
-            <h2>前提条件</h2>
-            
-            <h3>必要なツール</h3>
-            <ul>
-                <li><strong>macOS</strong> (Ventura 13.0以降推奨)</li>
-                <li><strong>Xcode</strong> (最新版)</li>
-                <li><strong>Node.js</strong> (Claude Code実行に必要)</li>
-                <li><strong>Claude Code CLI</strong></li>
-            </ul>
+            <div class="warning-box">
+                <div class="warning-header">開始前の重要事項</div>
+                <div class="warning-content">
+                    <p><strong>Claude Pro推奨:</strong> 大量のトークンを消費するため、<span class="highlight">Claude Pro</span>での利用を強く推奨します。無料版では制限により作業が中断される可能性があります。</p>
+                    <p><strong>クレジットカード必須:</strong> OpenWeatherMap APIは無料プランでも本人確認のためクレジットカード情報が必要です。</p>
+                    <p><strong>所要時間:</strong> 約1-2時間（初回環境セットアップ含む）</p>
+                </div>
+            </div>
 
-            <h3>必要なアカウント</h3>
-            <ul>
-                <li><strong>OpenWeatherMap</strong> アカウント（API利用のため）</li>
-            </ul>
-        </section>
+            <div class="info-box">
+                <h4>macOS標準機能との比較</h4>
+                <p>macOSには標準で天気表示機能があります（システム設定 > コントロールセンター > 天気）。しかし、このガイドで作成するアプリには以下の利点があります：</p>
+                <div class="comparison-grid">
+                    <div class="comparison-item">✓ カスタマイズ可能（表示内容、更新間隔など）</div>
+                    <div class="comparison-item">✓ プログラミング学習体験</div>
+                    <div class="comparison-item">✓ 独自の機能拡張が可能</div>
+                </div>
+                <p style="font-style: italic; margin-top: 1rem; color: #6c757d;">学習目的や、より柔軟な天気アプリをお望みの方におすすめです。</p>
+            </div>
 
-        <section id="setup">
-            <h2>手順1: 環境セットアップ</h2>
+            <div class="toc">
+                <h3>手順一覧</h3>
+                <div class="toc-grid">
+                    <div class="toc-item"><a href="#step1">手順1: 環境セットアップ</a></div>
+                    <div class="toc-item"><a href="#step2">手順2: プロジェクト作成</a></div>
+                    <div class="toc-item"><a href="#step3">手順3: アイコン準備</a></div>
+                    <div class="toc-item"><a href="#step4">手順4: Xcodeセットアップ</a></div>
+                    <div class="toc-item"><a href="#step5">手順5: エラー修正</a></div>
+                    <div class="toc-item"><a href="#step6">手順6: ビルド・実行</a></div>
+                    <div class="toc-item"><a href="#step7">手順7: 機能拡張</a></div>
+                    <div class="toc-item"><a href="#step8">手順8: アプリ配布</a></div>
+                </div>
+            </div>
 
-            <h3>1.1 Node.jsのインストール</h3>
-            <pre><code># Homebrewを使用
+            <div class="step" id="step1">
+                <div class="step-number">1</div>
+                <h2>環境セットアップ</h2>
+                
+                <h3>1.1 前提条件</h3>
+                <div class="substep">
+                    <h4>必要なツール</h4>
+                    <ul>
+                        <li><strong>macOS</strong> (Ventura 13.0以降推奨)</li>
+                        <li><strong>Xcode</strong> (最新版)</li>
+                        <li><strong>Node.js</strong> (Claude Code実行に必要)</li>
+                        <li><strong>Claude Code CLI</strong></li>
+                    </ul>
+                    
+                    <h4>必要なアカウント</h4>
+                    <ul>
+                        <li><strong>OpenWeatherMap</strong> アカウント（API利用のため）</li>
+                        <li><strong>クレジットカード</strong>（無料プランでも本人確認のために必須）</li>
+                    </ul>
+                </div>
+
+                <h3>1.2 Node.jsのインストール</h3>
+                <pre><code># Homebrewを使用
 brew install node
 
 # バージョン確認
 node --version
 npm --version</code></pre>
 
-            <h3>1.2 Claude Codeのインストール</h3>
-            <pre><code># グローバルインストール
+                <h3>1.3 Claude Codeのインストール</h3>
+                <pre><code># グローバルインストール
 npm install -g @anthropic-ai/claude-code
 
 # インストール確認
 claude --version</code></pre>
 
-            <h3>1.3 OpenWeatherMap APIキーの取得</h3>
-            <div class="step">
-                <ol>
-                    <li><a href="https://openweathermap.org/" target="_blank">OpenWeatherMap</a> にアクセス</li>
-                    <li>アカウント登録（Sign Up）
-                        <ul>
-                            <li>Username: 任意</li>
-                            <li>Email: メールアドレス</li>
-                            <li>Password: パスワード</li>
-                            <li>Age: 16歳以上を選択</li>
-                        </ul>
-                    </li>
-                    <li>メール認証を完了</li>
-                    <li><strong>One Call API 3.0</strong> を選択
-                        <ul>
-                            <li><strong>Free プラン</strong> を選択（1,000 calls/day）</li>
-                            <li>支払い情報入力（無料プランでも必要）</li>
-                        </ul>
-                    </li>
-                    <li>用途選択
-                        <ul>
-                            <li>Company: 空欄または「Personal」</li>
-                            <li>Purpose: <strong>Other</strong> を選択</li>
-                        </ul>
-                    </li>
-                    <li>APIキーをコピー（例：<code>a1b2c3d4e5f6g7h8i9j0k1l2m3n4o5p6</code> ※これは架空の例です）</li>
-                </ol>
+                <h3>1.4 OpenWeatherMap APIキーの取得</h3>
+                <div class="substep">
+                    <ol>
+                        <li><a href="https://openweathermap.org/" target="_blank">OpenWeatherMap</a> にアクセス</li>
+                        <li>アカウント登録（Sign Up）
+                            <ul>
+                                <li>Username: 任意</li>
+                                <li>Email: メールアドレス</li>
+                                <li>Password: パスワード</li>
+                                <li>Age: 16歳以上を選択</li>
+                            </ul>
+                        </li>
+                        <li>メール認証を完了</li>
+                        <li><strong>One Call API 3.0</strong> を選択
+                            <ul>
+                                <li><strong>Free プラン</strong> を選択（1,000 calls/day）</li>
+                                <li><strong>重要:</strong> 無料プランでも<strong>クレジットカード情報の入力が必須</strong>です</li>
+                                <li>カード情報は本人確認のために必要で、無料枠内では課金されません</li>
+                            </ul>
+                        </li>
+                        <li>用途選択
+                            <ul>
+                                <li>Company: 空欄または「Personal」</li>
+                                <li>Purpose: <strong>Other</strong> を選択</li>
+                            </ul>
+                        </li>
+                        <li>APIキーをコピー（例：<code>a1b2c3d4e5f6g7h8i9j0k1l2m3n4o5p6</code> ※これは架空の例です）</li>
+                    </ol>
+
+                    <div class="warning-box">
+                        <div class="warning-content">
+                            <h4>注意事項</h4>
+                            <ul>
+                                <li>クレジットカード情報は無料プランでも必須要件です</li>
+                                <li>1日1,000回のAPI呼び出しまでは完全無料です</li>
+                                <li>制限を超過した場合のみ課金が発生します</li>
+                                <li>このアプリでは10分間隔の更新なので、1日144回程度の呼び出しとなり、無料枠で十分です</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
             </div>
-        </section>
 
-        <section id="project">
-            <h2>手順2: プロジェクト作成</h2>
+            <div class="step" id="step2">
+                <div class="step-number">2</div>
+                <h2>プロジェクト作成</h2>
 
-            <h3>2.1 プロジェクトディレクトリの作成</h3>
-            <pre><code># プロジェクト用ディレクトリを作成
+                <h3>2.1 プロジェクトディレクトリの作成</h3>
+                <pre><code># プロジェクト用ディレクトリを作成
 mkdir WeatherMenuBar
 cd WeatherMenuBar</code></pre>
 
-            <h3>2.2 Claude Codeの起動</h3>
-            <pre><code>claude</code></pre>
+                <h3>2.2 Claude Codeの起動</h3>
+                <pre><code>claude</code></pre>
 
-            <h3>2.3 プロジェクト生成指示</h3>
-            <p>Claude Codeに以下の指示を送信：</p>
-            <pre><code>macOSのメニューバーに現在の気温を表示するSwiftアプリを作成してください。
+                <h3>2.3 プロジェクト生成指示</h3>
+                <p>Claude Codeに以下の指示を送信：</p>
+                <div class="error-example">
+                    <pre><code>macOSのメニューバーに現在の気温を表示するSwiftアプリを作成してください。
 
 要件：
-1. NSStatusItemを使ってメニューバーに気温（例：23°C）を表示
+1. NSStatusItemを使ってメニューバーに気温を小数点第一位まで表示（例：23.5°C）
 2. OpenWeatherMap One Call API 3.0を使用して東京の気温を取得
 3. 10分ごとに自動更新
 4. メニューバーアイコンをクリックすると詳細な天気情報（湿度、風速など）を表示
 5. アプリはバックグラウンドで動作（ドックに表示されない）
+6. 自作アイコン用のAssets.xcassetsを準備（空のAppIconセット）
 
 技術仕様：
 - SwiftUI + AppKit
 - URLSession for API calls  
 - Timer for auto-refresh
-- 温度単位：摂氏
+- 温度単位：摂氏（小数点第一位まで表示）
 - 東京の座標：lat=35.6762, lon=139.6503
 
-APIキーは後で設定します。まずはプロジェクト構造を作成してください。</code></pre>
-        </section>
+APIキーは後で設定し、アイコンも後から自作のものを追加します。気温は最初から小数点第一位まで表示するよう設定してください。</code></pre>
+                </div>
+            </div>
 
-        <section id="xcode">
-            <h2>手順3: Xcodeでプロジェクトを開く</h2>
+            <div class="step" id="step3">
+                <div class="step-number">3</div>
+                <h2>アプリアイコンの準備</h2>
 
-            <h3>3.1 プロジェクトを開く</h3>
-            <pre><code># Xcodeでプロジェクトを開く
+                <h3>3.1 アイコンデザインの作成</h3>
+                <p>1024x1024pxの正方形で天気アプリ用のアイコンを作成してください。</p>
+
+                <div class="substep">
+                    <h4>推奨デザインツール</h4>
+                    <ul>
+                        <li>Canva（オンライン、無料）</li>
+                        <li>Figma（オンライン、無料）</li>
+                        <li>Photoshop / Illustrator（有料）</li>
+                    </ul>
+
+                    <h4>デザインのアイデア</h4>
+                    <ul>
+                        <li>温度計のシンプルなイラスト</li>
+                        <li>天気記号（雲、太陽、雨など）</li>
+                        <li>地域の特色を表現した要素</li>
+                        <li>ミニマルで視認性の良いデザイン</li>
+                    </ul>
+                </div>
+
+                <h3>3.2 アイコンファイルの保存</h3>
+                <div class="substep">
+                    <ul>
+                        <li>ファイル形式：PNG</li>
+                        <li>サイズ：1024x1024px</li>
+                        <li>ファイル名：app-icon.png（わかりやすい名前）</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="step" id="step4">
+                <div class="step-number">4</div>
+                <h2>Xcodeでプロジェクトを開く</h2>
+
+                <h3>4.1 プロジェクトを開く</h3>
+                <pre><code># Xcodeでプロジェクトを開く
 open WeatherMenuBar.xcodeproj</code></pre>
 
-            <h3>3.2 APIキーの設定</h3>
-            <div class="step">
-                <ol>
-                    <li><strong>Services</strong> → <strong>WeatherService</strong> ファイルを開く</li>
-                    <li>以下の行を探す：
-                        <pre><code>private let apiKey = "YOUR_API_KEY_HERE"</code></pre>
-                    </li>
-                    <li>取得したAPIキーに置き換える（※下記は架空の例です。実際のAPIキーを使用してください）：
-                        <pre><code>private let apiKey = "a1b2c3d4e5f6g7h8i9j0k1l2m3n4o5p6"</code></pre>
-                    </li>
-                </ol>
+                <h3>4.2 アプリアイコンの設定</h3>
+                <div class="substep">
+                    <ol>
+                        <li>Xcodeの左側プロジェクトナビゲーターで<strong>Assets.xcassets</strong>を選択</li>
+                        <li><strong>AppIcon</strong>をクリック</li>
+                        <li>準備した1024x1024pxのアイコンファイルを、<strong>1024pt</strong>のスロットにドラッグ&ドロップ</li>
+                        <li>Xcodeが自動的に他のサイズを生成してくれます</li>
+                    </ol>
+                </div>
+
+                <h3>4.3 APIキーの設定</h3>
+                <div class="substep">
+                    <ol>
+                        <li><strong>Services</strong> → <strong>WeatherService</strong> ファイルを開く</li>
+                        <li>以下の行を探す：
+                            <pre><code>private let apiKey = "YOUR_API_KEY_HERE"</code></pre>
+                        </li>
+                        <li>取得したAPIキーに置き換える（※下記は架空の例です。実際のAPIキーを使用してください）：
+                            <pre><code>private let apiKey = "a1b2c3d4e5f6g7h8i9j0k1l2m3n4o5p6"</code></pre>
+                        </li>
+                    </ol>
+                </div>
             </div>
-        </section>
 
-        <section id="errors">
-            <h2>手順4: エラー修正（一般的な問題）</h2>
+            <div class="step" id="step5">
+                <div class="step-number">5</div>
+                <h2>エラー修正（Claude Code活用）</h2>
 
-            <h3>4.1 データモデルの修正</h3>
-            <p>WeatherDataモデルでエラーが発生した場合：</p>
-            <p><strong>Models</strong> → <strong>WeatherModel</strong> を開き、以下に修正：</p>
-            <pre><code>struct WeatherData: Codable {
-    let current: CurrentWeather
-}</code></pre>
+                <div class="best-practices">
+                    <h4>重要原則</h4>
+                    <p>エラーが発生した場合、手動でコードを修正せずに、Claude Codeに修正を依頼することを強く推奨します。</p>
+                </div>
 
-            <h3>4.2 プロパティアクセスの修正</h3>
-            <p>各Viewファイルで、以下のように修正：</p>
-            <ul>
-                <li><code>weather.temperature</code> → <code>weather.current.temp</code></li>
-                <li><code>weather.feelsLike</code> → <code>weather.current.feelsLike</code></li>
-                <li><code>weather.humidity</code> → <code>weather.current.humidity</code></li>
-                <li><code>weather.timestamp</code> → <code>weather.current.dt</code></li>
-            </ul>
+                <h3>5.1 データモデルエラーの場合</h3>
+                <p>「Value of type 'WeatherData' has no member 'current'」などのエラーが表示された場合：</p>
+                <div class="error-example">
+                    <pre><code>WeatherDataモデルでエラーが発生しています。OpenWeatherMap One Call API 3.0のレスポンス構造に合わせてWeatherDataモデルを修正してください。
 
-            <h3>4.3 型エラーの修正</h3>
-            <p>Claude Codeに以下を依頼：</p>
-            <pre><code>ビルドエラーが発生しています。すべての型の不一致とプロパティアクセスエラーを修正してください。</code></pre>
-        </section>
+エラー内容：
+[具体的なエラーメッセージをコピー&ペースト]
 
-        <section id="build">
-            <h2>手順5: ビルド・実行</h2>
+APIレスポンスの構造に合わせて、すべての関連ファイルを修正してください。</code></pre>
+                </div>
 
-            <h3>5.1 テスト実行</h3>
-            <ol>
-                <li>Xcode上部の <strong>▶️ ボタン</strong> をクリック</li>
-                <li>または <strong>Cmd + R</strong> でビルド・実行</li>
-                <li>エラーが発生した場合、Claude Codeに修正を依頼</li>
-            </ol>
+                <h3>5.2 プロパティアクセスエラーの場合</h3>
+                <p>「has no member 'temperature'」などのエラーが複数表示された場合：</p>
+                <div class="error-example">
+                    <pre><code>複数のファイルでプロパティアクセスエラーが発生しています。WeatherDataの新しい構造に合わせて、すべてのViewファイルとManagerファイルを修正してください。
 
-            <h3>5.2 動作確認</h3>
-            <ul>
-                <li>メニューバー右上に気温（例：32°C）が表示される</li>
-                <li>クリックすると詳細な天気情報が表示される</li>
-                <li>10分ごとに自動更新される</li>
-            </ul>
-        </section>
+発生しているエラー：
+- MenuBarView: プロパティアクセスエラー
+- DetailView: プロパティアクセスエラー  
+- WeatherManager: 型の不一致エラー
 
-        <section id="distribute">
-            <h2>手順6: 独立したアプリの作成</h2>
+すべてのファイルを一括で修正してください。</code></pre>
+                </div>
 
-            <h3>6.1 コード署名の設定</h3>
-            <p>Claude Codeに以下を依頼：</p>
-            <pre><code>個人使用向けにコード署名なしでアプリを作成する方法を設定してください。</code></pre>
+                <h3>5.3 型エラー・APIエラーの場合</h3>
+                <div class="error-example">
+                    <pre><code>以下の型エラーが発生しています。すべて修正してください：
 
-            <h3>6.2 アーカイブの作成</h3>
-            <ol>
-                <li>Xcode: <strong>Product</strong> → <strong>Archive</strong></li>
-                <li>アーカイブ完了後、<strong>Distribute App</strong></li>
-                <li><strong>Custom</strong> → <strong>Copy App</strong> を選択</li>
-                <li>保存先で <strong>Applications</strong> フォルダを選択</li>
-            </ol>
+[Xcodeのエラーメッセージをコピー&ペースト]
 
-            <h3>6.3 アプリの配置</h3>
-            <ol>
-                <li>作成されたアプリをApplicationsフォルダに移動</li>
-                <li>アプリをダブルクリックして起動</li>
-                <li>メニューバーに気温が表示されることを確認</li>
-            </ol>
-        </section>
+関連するすべてのファイルの型の不一致を解決し、ビルドが成功するよう修正してください。</code></pre>
+                </div>
 
-        <section id="troubleshooting">
-            <h2>トラブルシューティング</h2>
+                <h3>5.4 プロジェクト破損の場合</h3>
+                <div class="error-example">
+                    <pre><code>WeatherMenuBarプロジェクトが破損しています。以下のエラーが発生しています：
 
-            <h3>APIエラー</h3>
-            <ul>
-                <li>APIキーが正しく設定されているか確認</li>
-                <li>OpenWeatherMapアカウントでAPI制限を確認</li>
-            </ul>
+エラー内容：
+[具体的なエラーメッセージをコピー&ペースト]
 
-            <h3>ビルドエラー</h3>
-            <ul>
-                <li>Claude Codeに具体的なエラーメッセージを送信</li>
-                <li>Clean Build Folder（Shift + Cmd + K）後に再ビルド</li>
-            </ul>
+プロジェクトファイルを修復または再生成してください。既存のアプリは動作しているので、そのまま保持しつつ、プロジェクトの修復を行ってください。</code></pre>
+                </div>
 
-            <h3>メニューバーに表示されない</h3>
-            <ul>
-                <li>アプリがバックグラウンドで動作中か確認</li>
-                <li>システム設定でネットワークアクセス許可を確認</li>
-                <li>アクティビティモニタでプロセスを確認</li>
-            </ul>
-
-            <h3>プロジェクト破損</h3>
-            <ul>
-                <li><code>xcuserdata</code>フォルダを削除</li>
-                <li><code>project.xcworkspace</code>フォルダを削除（存在する場合）</li>
-                <li>Xcodeを再起動</li>
-            </ul>
-        </section>
-
-        <section id="features">
-            <h2>完成後の機能</h2>
-
-            <div class="feature-list">
-                <h4>基本機能</h4>
-                <ul>
-                    <li>メニューバーに現在の東京の気温を表示</li>
-                    <li>10分ごとの自動更新</li>
-                    <li>クリックして詳細天気情報を表示</li>
-                </ul>
-
-                <h4>技術仕様</h4>
-                <ul>
-                    <li>SwiftUI + AppKit アーキテクチャ</li>
-                    <li>OpenWeatherMap One Call API 3.0 統合</li>
-                    <li>NSStatusItem によるメニューバー統合</li>
-                    <li>Timer による定期更新</li>
-                    <li>バックグラウンド動作（LSUIElement設定）</li>
-                </ul>
+                <div class="best-practices">
+                    <h4>エラー修正のベストプラクティス</h4>
+                    <ul>
+                        <li>エラーメッセージを正確にコピーして Claude Code に伝える</li>
+                        <li>複数のエラーがある場合は、すべてまとめて修正を依頼</li>
+                        <li>手動修正は避け、Claude Code の自動修正に任せる</li>
+                        <li>修正後は必ずビルドして確認する</li>
+                    </ul>
+                </div>
             </div>
-        </section>
 
-        <div class="warning">
-            <h4>注意事項</h4>
-            <ul>
-                <li>APIキーは秘匿情報として適切に管理</li>
-                <li>無料プランは1日1,000回のAPI呼び出し制限</li>
-                <li>macOSのバージョンによってはアクセス許可が必要</li>
-                <li>アイコン表示にはさらなる設定が必要な場合あり</li>
-            </ul>
-        </div>
+            <div class="step" id="step6">
+                <div class="step-number">6</div>
+                <h2>ビルド・実行</h2>
 
-        <div class="info">
-            <h4>まとめ</h4>
-            <p>この手順により、プログラミング知識がなくてもClaude Codeを活用して実用的なmacOS天気アプリを作成できます。完成したアプリは通常のmacOSアプリケーションとして動作し、メニューバーから現在の気温を常時確認できます。</p>
-        </div>
-    </div>
-</body>
-</html>
+                <h3>6.1 テスト実行</h3>
+                <div class="substep">
+                    <ol>
+                        <li>Xcode上部の <strong>▶️ ボタン</strong> をクリック</li>
+                        <li>または <strong>Cmd + R</strong> でビルド・実行</li>
+                        <li>エラーが発生した場合、Claude Codeに修正を依頼</li>
+                    </ol>
+                </div>
+
+                <h3>6.2 動作確認</h3>
+                <div class="feature-showcase">
+                    <h4>確認ポイント</h4>
+                    <ul>
+                        <li>メニューバー右上に気温が小数点第一位まで表示される（例：32.5°C）</li>
+                        <li>クリックすると詳細な天気情報が表示される</li>
+                        <li>10分ごとに自動更新される</li>
+                        <li>自作アイコンが表示されているか確認</li>
+                    </ul>
+                </div>
