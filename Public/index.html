@@ -521,16 +521,74 @@ claude --version</code></pre>
                 <div class="step-number">2</div>
                 <h2>プロジェクト作成</h2>
 
-                <h3>2.1 プロジェクトディレクトリの作成</h3>
-                <pre><code># プロジェクト用ディレクトリを作成
+                <h3>2.1 作業ディレクトリの準備</h3>
+                <div class="substep">
+                    <h4>適切な場所を選択</h4>
+                    <p>開発プロジェクトは整理して管理することが重要です。以下のような場所に作成することを推奨します：</p>
+                    <ul>
+                        <li><code>~/Documents/Development/</code> （開発用フォルダを作成している場合）</li>
+                        <li><code>~/Projects/</code> （プロジェクト専用フォルダ）</li>
+                        <li><code>~/Desktop/</code> （一時的な作業の場合）</li>
+                    </ul>
+                </div>
+
+                <div class="substep">
+                    <h4>ディレクトリ作成コマンド</h4>
+                    <pre><code># 例：Documentsフォルダ内に開発用ディレクトリを作成
+cd ~/Documents
+mkdir -p Development
+cd Development
+
+# プロジェクト用ディレクトリを作成
 mkdir WeatherMenuBar
-cd WeatherMenuBar</code></pre>
+cd WeatherMenuBar
 
-                <h3>2.2 Claude Codeの起動</h3>
-                <pre><code>claude</code></pre>
+# 現在の場所を確認
+pwd</code></pre>
+                    <p><strong>重要:</strong> プロジェクト名に日本語や特殊文字を使わず、英数字のみを使用してください。Xcodeとの互換性を確保するためです。</p>
+                </div>
 
-                <h3>2.3 プロジェクト生成指示</h3>
-                <p>Claude Codeに以下の指示を送信：</p>
+                <h3>2.2 Claude Codeの起動と初期設定</h3>
+                <div class="substep">
+                    <h4>Claude Codeの起動</h4>
+                    <pre><code># WeatherMenuBarディレクトリ内で実行
+claude</code></pre>
+                    
+                    <h4>起動時の画面について</h4>
+                    <p>Claude Codeが正常に起動すると、以下のような画面が表示されます：</p>
+                    <ul>
+                        <li>Claude Codeのロゴとバージョン情報</li>
+                        <li>現在のディレクトリパス</li>
+                        <li>プロンプト（入力待ち状態）</li>
+                    </ul>
+                </div>
+
+                <div class="best-practices">
+                    <h4>💡 Claude Code使用のコツ</h4>
+                    <ul>
+                        <li><strong>具体的な指示:</strong> 曖昧な表現ではなく、具体的な要件を明確に伝える</li>
+                        <li><strong>段階的なアプローチ:</strong> 複雑な機能は段階的に実装を依頼する</li>
+                        <li><strong>エラー報告:</strong> エラーが発生したら、エラーメッセージをそのまま貼り付ける</li>
+                        <li><strong>コンテキスト保持:</strong> 同じセッション内では前の会話内容を参照してくれる</li>
+                    </ul>
+                </div>
+
+                <h3>2.3 プロジェクト生成の詳細指示</h3>
+                <div class="substep">
+                    <h4>指示内容の構成について</h4>
+                    <p>以下の指示は、Claude Codeが完璧なSwiftプロジェクトを生成するために必要な全ての情報を含んでいます：</p>
+                    <ul>
+                        <li><strong>要件セクション:</strong> アプリの基本機能と動作</li>
+                        <li><strong>技術仕様:</strong> 使用する技術スタックとAPI</li>
+                        <li><strong>実装方針:</strong> 後から設定する項目の明確化</li>
+                    </ul>
+                </div>
+
+                <div class="feature-showcase">
+                    <h4>📋 Claude Codeに送信する指示</h4>
+                    <p><strong>重要:</strong> 以下のテキストをそのままコピーして、Claude Codeのプロンプトに貼り付けてください。</p>
+                </div>
+
                 <div class="error-example">
                     <pre><code>macOSのメニューバーに現在の気温を表示するSwiftアプリを作成してください。
 
@@ -550,6 +608,28 @@ cd WeatherMenuBar</code></pre>
 - 東京の座標：lat=35.6762, lon=139.6503
 
 APIキーは後で設定し、アイコンも後から自作のものを追加します。気温は最初から小数点第一位まで表示するよう設定してください。</code></pre>
+                </div>
+
+                <div class="info-box">
+                    <h4>⏱️ 予想される処理時間</h4>
+                    <p>Claude Codeがプロジェクトを生成する際の目安時間：</p>
+                    <ul>
+                        <li><strong>プロジェクト構造作成:</strong> 30秒〜1分</li>
+                        <li><strong>コード生成:</strong> 2〜5分</li>
+                        <li><strong>ファイル配置:</strong> 30秒〜1分</li>
+                    </ul>
+                    <p><strong>合計:</strong> 約3〜7分程度でプロジェクト全体が完成します。</p>
+                </div>
+
+                <div class="warning-box">
+                    <div class="warning-header">生成中の注意事項</div>
+                    <div class="warning-content">
+                        <ul>
+                            <li>Claude Codeの処理中は他の操作を行わないでください</li>
+                            <li>ネットワークエラーが発生した場合は、同じ指示を再度送信してください</li>
+                            <li>生成されたファイルは手動で編集せず、修正はClaude Codeに依頼してください</li>
+                        </ul>
+                    </div>
                 </div>
             </div>
 
