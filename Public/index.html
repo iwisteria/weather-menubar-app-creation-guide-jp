@@ -622,12 +622,24 @@ claude --version</code></pre>
                 <h3>2.1 作業ディレクトリの準備</h3>
                 <div class="substep">
                     <h4>適切な場所を選択</h4>
-                    <p>開発プロジェクトは整理して管理することが重要です。以下のような場所に作成することを推奨します：</p>
+                    <p>開発プロジェクトは整理して管理することが重要です。以下は推奨する場所の<strong>一例</strong>です：</p>
                     <ul>
-                        <li><code>~/Documents/Development/</code> （開発用フォルダを作成している場合）</li>
+                        <li><code>~/Documents/Development/</code> （開発用フォルダ - このガイドでの例）</li>
                         <li><code>~/Projects/</code> （プロジェクト専用フォルダ）</li>
                         <li><code>~/Desktop/</code> （一時的な作業の場合）</li>
+                        <li><code>~/MyApps/</code> （オリジナルのフォルダ名でも可能）</li>
                     </ul>
+                    
+                    <div class="info-box">
+                        <h4>🎨 フォルダ名は自由にカスタマイズ可能</h4>
+                        <p><strong>重要:</strong> このガイドでは<code>~/Documents/Development/</code>を例として使用しますが、<strong>お好みの場所とフォルダ名で作成できます。</strong></p>
+                        <ul>
+                            <li><strong>例1:</strong> <code>~/Code/WeatherApp/</code></li>
+                            <li><strong>例2:</strong> <code>~/Programming/MyWeatherApp/</code></li>
+                            <li><strong>例3:</strong> <code>~/Desktop/WeatherProject/</code></li>
+                        </ul>
+                        <p>フォルダ名は<strong>英数字のみ</strong>を使用し、日本語や特殊文字は避けてください。</p>
+                    </div>
                 </div>
 
                 <div class="substep">
@@ -636,6 +648,18 @@ claude --version</code></pre>
                     <div class="info-box">
                         <h4>🎯 この作業の目的</h4>
                         <p>プロジェクト専用のフォルダを作成し、そこでClaude Codeを起動することで、生成されるファイルが整理され、管理しやすくなります。</p>
+                    </div>
+
+                    <div class="warning-box">
+                        <div class="warning-header">📁 フォルダ構成について</div>
+                        <div class="warning-content">
+                            <p>以下の手順は<strong>一例</strong>です。お好みの場所にフォルダを作成して構いません。</p>
+                            <ul>
+                                <li><strong>この例:</strong> <code>~/Documents/Development/WeatherMenuBar/</code></li>
+                                <li><strong>別の例:</strong> <code>~/Desktop/MyWeatherApp/</code> でも同様に作成可能</li>
+                                <li><strong>重要:</strong> 最終的にWeatherMenuBarフォルダ内でClaude Codeを起動することが目標です</li>
+                            </ul>
+                        </div>
                     </div>
 
                     <h5><strong>ステップ1:</strong> ターミナルを開く</h5>
@@ -648,7 +672,10 @@ claude --version</code></pre>
                     <h5><strong>ステップ2:</strong> 現在位置を確認</h5>
                     <div class="substep">
                         <p>まず、今どこにいるかを確認しましょう：</p>
-                        <pre><code>pwd</code></pre>
+                        <div class="copyable-code">
+                            <button class="copy-button" onclick="copyToClipboard(this, 'pwd-command')">📋 コピー</button>
+                            <pre><code id="pwd-command">pwd</code></pre>
+                        </div>
                         <div class="feature-showcase">
                             <h4>📝 コマンドの意味</h4>
                             <ul>
@@ -662,7 +689,10 @@ claude --version</code></pre>
                     <h5><strong>ステップ3:</strong> Documentsフォルダに移動</h5>
                     <div class="substep">
                         <p>以下のコマンドを入力してEnterを押します：</p>
-                        <pre><code>cd ~/Documents</code></pre>
+                        <div class="copyable-code">
+                            <button class="copy-button" onclick="copyToClipboard(this, 'cd-documents')">📋 コピー</button>
+                            <pre><code id="cd-documents">cd ~/Documents</code></pre>
+                        </div>
                         <div class="feature-showcase">
                             <h4>📝 コマンドの意味</h4>
                             <ul>
@@ -676,7 +706,10 @@ claude --version</code></pre>
                     <h5><strong>ステップ4:</strong> 開発用フォルダを作成</h5>
                     <div class="substep">
                         <p>以下のコマンドを入力してEnterを押します：</p>
-                        <pre><code>mkdir -p Development</code></pre>
+                        <div class="copyable-code">
+                            <button class="copy-button" onclick="copyToClipboard(this, 'mkdir-development')">📋 コピー</button>
+                            <pre><code id="mkdir-development">mkdir -p Development</code></pre>
+                        </div>
                         <div class="feature-showcase">
                             <h4>📝 コマンドの意味</h4>
                             <ul>
@@ -690,25 +723,37 @@ claude --version</code></pre>
                     <h5><strong>ステップ5:</strong> 開発用フォルダに移動</h5>
                     <div class="substep">
                         <p>作成したDevelopmentフォルダに移動します：</p>
-                        <pre><code>cd Development</code></pre>
+                        <div class="copyable-code">
+                            <button class="copy-button" onclick="copyToClipboard(this, 'cd-development')">📋 コピー</button>
+                            <pre><code id="cd-development">cd Development</code></pre>
+                        </div>
                     </div>
 
                     <h5><strong>ステップ6:</strong> プロジェクト専用フォルダを作成</h5>
                     <div class="substep">
                         <p>天気アプリ専用のフォルダを作成します：</p>
-                        <pre><code>mkdir WeatherMenuBar</code></pre>
+                        <div class="copyable-code">
+                            <button class="copy-button" onclick="copyToClipboard(this, 'mkdir-project')">📋 コピー</button>
+                            <pre><code id="mkdir-project">mkdir WeatherMenuBar</code></pre>
+                        </div>
                     </div>
 
                     <h5><strong>ステップ7:</strong> プロジェクトフォルダに移動</h5>
                     <div class="substep">
                         <p>作成したプロジェクトフォルダに移動します：</p>
-                        <pre><code>cd WeatherMenuBar</code></pre>
+                        <div class="copyable-code">
+                            <button class="copy-button" onclick="copyToClipboard(this, 'cd-project')">📋 コピー</button>
+                            <pre><code id="cd-project">cd WeatherMenuBar</code></pre>
+                        </div>
                     </div>
 
                     <h5><strong>ステップ8:</strong> 最終確認</h5>
                     <div class="substep">
                         <p>正しい場所にいるか確認します：</p>
-                        <pre><code>pwd</code></pre>
+                        <div class="copyable-code">
+                            <button class="copy-button" onclick="copyToClipboard(this, 'pwd-final')">📋 コピー</button>
+                            <pre><code id="pwd-final">pwd</code></pre>
+                        </div>
                         <div class="info-box">
                             <h4>💡 確認のポイント</h4>
                             <p><code>pwd</code>コマンド（"print working directory"）で現在位置を確認し、以下のような表示になれば成功です：</p>
@@ -744,8 +789,10 @@ claude --version</code></pre>
                 <div class="substep">
                     <h4>Claude Codeの起動手順</h4>
                     <p><strong>重要:</strong> WeatherMenuBarディレクトリ内にいることを確認してから実行してください。</p>
-                    <pre><code># WeatherMenuBarディレクトリ内で実行
-claude</code></pre>
+                    <div class="copyable-code">
+                        <button class="copy-button" onclick="copyToClipboard(this, 'claude-start')">📋 コピー</button>
+                        <pre><code id="claude-start">claude</code></pre>
+                    </div>
                     
                     <h4>起動時の画面について</h4>
                     <p>Claude Codeが正常に起動すると、ターミナルに以下のような表示が現れます：</p>
