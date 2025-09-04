@@ -923,12 +923,31 @@ APIキーは後で設定し、アイコンも後から自作のものを追加�
 
                 <h3>4.2 アプリアイコンの設定</h3>
                 <div class="substep">
+                    <h4>簡単な設定方法（推奨）</h4>
                     <ol>
                         <li>Xcodeの左側プロジェクトナビゲーターで<strong>Assets.xcassets</strong>を選択</li>
                         <li><strong>AppIcon</strong>をクリック</li>
-                        <li>準備した1024x1024pxのアイコンファイルを、<strong>1024pt</strong>のスロットにドラッグ&ドロップ</li>
+                        <li>準備した<strong>1024x1024px</strong>のアイコンファイルを、右下の<strong>App Store 1024pt</strong>のスロットにドラッグ&ドロップ</li>
                         <li>Xcodeが自動的に他のサイズを生成してくれます</li>
                     </ol>
+                    
+                    <div class="info-box">
+                        <h4>📁 必要なファイル</h4>
+                        <ul>
+                            <li><strong>1枚のみ：</strong> 1024x1024px のPNG画像</li>
+                            <li><strong>自動生成：</strong> Xcodeが16x16px、32x32px、128x128px、256x256px、512x512pxを自動作成</li>
+                            <li><strong>ファイル名：</strong> わかりやすい名前（例：weather-app-icon.png）</li>
+                        </ul>
+                    </div>
+
+                    <div class="best-practices">
+                        <h4>💡 アイコン作成のコツ</h4>
+                        <ul>
+                            <li><strong>高解像度：</strong> 1024x1024pxで作成すれば、縮小時も美しく表示</li>
+                            <li><strong>シンプルデザイン：</strong> 小さくなっても認識しやすいデザインを心がける</li>
+                            <li><strong>背景透明化：</strong> PNG形式で背景を透明にすると、システムとの親和性が向上</li>
+                        </ul>
+                    </div>
                 </div>
 
                 <h3>4.3 APIキーの設定</h3>
