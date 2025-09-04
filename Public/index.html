@@ -940,6 +940,56 @@ open WeatherMenuBar.xcodeproj</code></pre>
                         </li>
                     </ol>
                 </div>
+
+                <h3>4.4 気温取得地点の変更（オプション）</h3>
+                <div class="substep">
+                    <p>デフォルトでは渋谷の気温を取得しますが、お好みの地点に変更することができます。</p>
+                    
+                    <h4>座標の変更方法</h4>
+                    <ol>
+                        <li><strong>Services</strong> → <strong>WeatherService</strong> ファイル内で以下の行を探す：
+                            <pre><code>private let latitude = 35.6583    // 渋谷の緯度
+private let longitude = 139.6972   // 渋谷の経度</code></pre>
+                        </li>
+                        <li>変更したい地点の座標に置き換える（例：新宿の場合）：
+                            <pre><code>private let latitude = 35.6896    // 新宿の緯度  
+private let longitude = 139.6917   // 新宿の経度</code></pre>
+                        </li>
+                    </ol>
+
+                    <h4>主要地点の座標例</h4>
+                    <div class="info-box">
+                        <ul>
+                            <li><strong>渋谷:</strong> lat=35.6583, lon=139.6972</li>
+                            <li><strong>新宿:</strong> lat=35.6896, lon=139.6917</li>
+                            <li><strong>池袋:</strong> lat=35.7295, lon=139.7109</li>
+                            <li><strong>品川:</strong> lat=35.6284, lon=139.7387</li>
+                            <li><strong>大阪梅田:</strong> lat=34.7024, lon=135.4937</li>
+                            <li><strong>札幌:</strong> lat=43.0642, lon=141.3469</li>
+                            <li><strong>福岡天神:</strong> lat=33.5904, lon=130.4017</li>
+                        </ul>
+                    </div>
+
+                    <div class="feature-showcase">
+                        <h4>🌍 座標の調べ方</h4>
+                        <p>任意の地点の座標を調べる方法：</p>
+                        <ol>
+                            <li><a href="https://www.google.com/maps" target="_blank">Google マップ</a>を開く</li>
+                            <li>目的の場所を検索または地図上をクリック</li>
+                            <li>表示される座標（例：35.6583, 139.6972）をメモ</li>
+                            <li>最初の数値が緯度（latitude）、2番目が経度（longitude）</li>
+                        </ol>
+                    </div>
+
+                    <div class="best-practices">
+                        <h4>💡 地点変更のコツ</h4>
+                        <ul>
+                            <li><strong>正確性:</strong> 座標は小数点第4位まで正確に入力</li>
+                            <li><strong>動作確認:</strong> 変更後は必ずビルド・実行して動作を確認</li>
+                            <li><strong>複数地点:</strong> 将来的に複数地点対応も可能（Claude Codeに拡張を依頼）</li>
+                        </ul>
+                    </div>
+                </div>
             </div>
 
             <div class="step" id="step5">
