@@ -1018,6 +1018,7 @@ private let longitude = 139.6917   // 新宿の経度</code></pre>
                                 <li>「web_searchで「那覇空港 緯度経度 座標」を検索し、lat=○○, lon=○○形式（小数点4桁）で回答してください」</li>
                             </ul>
                             <p><strong>メリット:</strong> 最新のweb検索結果に基づく正確な座標が、コード形式でそのまま使用可能</p>
+                            <p><strong>トークン消費:</strong> web_search機能を使用するため、通常の質問より多くのトークンを消費します（体感で3-5倍程度）</p>
                         </div>
 
                         <h5><strong>方法2: Google マップを使用</strong></h5>
@@ -1027,6 +1028,7 @@ private let longitude = 139.6917   // 新宿の経度</code></pre>
                             <li>表示される座標（例：35.6583, 139.6972）をメモ</li>
                             <li>最初の数値が緯度（latitude）、2番目が経度（longitude）</li>
                         </ol>
+                        <p><strong>メリット:</strong> Claude Codeのトークンを消費せず、無料で正確な座標を取得可能</p>
                     </div>
 
                     <div class="best-practices">
