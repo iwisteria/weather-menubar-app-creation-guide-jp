@@ -1003,21 +1003,21 @@ private let longitude = 139.6917   // 新宿の経度</code></pre>
                         <h4>🌍 座標の調べ方</h4>
                         
                         <h5><strong>方法1: Claude Codeに質問する（推奨）</strong></h5>
-                        <p>Claude Codeに具体的な形式を指定して質問することで、そのまま使える座標を取得できます：</p>
+                        <p>Claude Codeにweb_searchを使用した検索を依頼することで、最新かつ正確な座標を取得できます：</p>
                         <div class="copyable-code">
                             <button class="copy-button" onclick="copyToClipboard(this, 'claude-coordinate-query')">📋 コピー</button>
-                            <pre><code id="claude-coordinate-query">横浜駅の座標を「lat=○○, lon=○○」の形式で教えてください。Swiftコードで使用するので、小数点第4位まで正確にお願いします。</code></pre>
+                            <pre><code id="claude-coordinate-query">web_searchで「横浜駅 緯度経度 座標」を検索し、lat=○○, lon=○○形式（小数点4桁）で回答してください。</code></pre>
                         </div>
                         
                         <div class="info-box">
                             <h4>💡 Claude Codeへの質問例</h4>
                             <ul>
-                                <li>「名古屋駅の座標を「lat=○○, lon=○○」の形式で教えてください」</li>
-                                <li>「京都駅の座標を「lat=○○, lon=○○」の形式で、小数点第4位まで教えてください」</li>
-                                <li>「仙台駅の座標を「lat=○○, lon=○○」の形式でお願いします」</li>
-                                <li>「那覇空港の座標を「lat=○○, lon=○○」の形式で教えてください」</li>
+                                <li>「web_searchで「名古屋駅 緯度経度 座標」を検索し、lat=○○, lon=○○形式（小数点4桁）で回答してください」</li>
+                                <li>「web_searchで「京都駅 緯度経度 座標」を検索し、lat=○○, lon=○○形式（小数点4桁）で回答してください」</li>
+                                <li>「web_searchで「仙台駅 緯度経度 座標」を検索し、lat=○○, lon=○○形式（小数点4桁）で回答してください」</li>
+                                <li>「web_searchで「那覇空港 緯度経度 座標」を検索し、lat=○○, lon=○○形式（小数点4桁）で回答してください」</li>
                             </ul>
-                            <p><strong>メリット:</strong> コード形式で回答されるため、そのまま座標変更の依頼に使用可能</p>
+                            <p><strong>メリット:</strong> 最新のweb検索結果に基づく正確な座標が、コード形式でそのまま使用可能</p>
                         </div>
 
                         <h5><strong>方法2: Google マップを使用</strong></h5>
