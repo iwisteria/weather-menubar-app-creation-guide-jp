@@ -1003,21 +1003,21 @@ private let longitude = 139.6917   // 新宿の経度</code></pre>
                         <h4>🌍 座標の調べ方</h4>
                         
                         <h5><strong>方法1: Claude Codeに質問する（推奨）</strong></h5>
-                        <p>Claude Codeに直接質問して座標を取得できます：</p>
+                        <p>Claude Codeに具体的な形式を指定して質問することで、そのまま使える座標を取得できます：</p>
                         <div class="copyable-code">
                             <button class="copy-button" onclick="copyToClipboard(this, 'claude-coordinate-query')">📋 コピー</button>
-                            <pre><code id="claude-coordinate-query">横浜駅の緯度・経度を教えてください。気温取得地点として使用したいので、正確な座標をお願いします。</code></pre>
+                            <pre><code id="claude-coordinate-query">横浜駅の座標を「lat=○○, lon=○○」の形式で教えてください。Swiftコードで使用するので、小数点第4位まで正確にお願いします。</code></pre>
                         </div>
                         
                         <div class="info-box">
                             <h4>💡 Claude Codeへの質問例</h4>
                             <ul>
-                                <li>「名古屋駅の緯度・経度を教えてください」</li>
-                                <li>「京都駅周辺の正確な座標を教えてください」</li>
-                                <li>「仙台市中心部の緯度・経度を教えてください」</li>
-                                <li>「沖縄県那覇市の座標を教えてください」</li>
+                                <li>「名古屋駅の座標を「lat=○○, lon=○○」の形式で教えてください」</li>
+                                <li>「京都駅の座標を「lat=○○, lon=○○」の形式で、小数点第4位まで教えてください」</li>
+                                <li>「仙台駅の座標を「lat=○○, lon=○○」の形式でお願いします」</li>
+                                <li>「那覇空港の座標を「lat=○○, lon=○○」の形式で教えてください」</li>
                             </ul>
-                            <p><strong>メリット:</strong> 正確で素早く、コピー&ペーストで即座に利用可能</p>
+                            <p><strong>メリット:</strong> コード形式で回答されるため、そのまま座標変更の依頼に使用可能</p>
                         </div>
 
                         <h5><strong>方法2: Google マップを使用</strong></h5>
