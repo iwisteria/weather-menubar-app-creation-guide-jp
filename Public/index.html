@@ -946,6 +946,35 @@ open WeatherMenuBar.xcodeproj</code></pre>
                     <p>デフォルトでは渋谷の気温を取得しますが、お好みの地点に変更することができます。</p>
                     
                     <h4>座標の変更方法</h4>
+                    
+                    <h5><strong>方法1: Claude Codeに依頼する（推奨）</strong></h5>
+                    <div class="feature-showcase">
+                        <h4>🤖 Claude Codeへの依頼例</h4>
+                        <p>以下のようにClaude Codeに依頼することで、自動的に座標を変更できます：</p>
+                        <div class="copyable-code">
+                            <button class="copy-button" onclick="copyToClipboard(this, 'claude-location-change')">📋 コピー</button>
+                            <pre><code id="claude-location-change">WeatherServiceファイルで、気温取得地点を新宿に変更してください。
+
+現在の座標：
+- 渋谷: lat=35.6583, lon=139.6972
+
+変更後の座標：  
+- 新宿: lat=35.6896, lon=139.6917
+
+座標の変更を行い、コメントも適切に更新してください。</code></pre>
+                        </div>
+                        
+                        <div class="info-box">
+                            <h4>💡 他の地点への変更例</h4>
+                            <ul>
+                                <li><strong>池袋の場合:</strong> 「気温取得地点を池袋（lat=35.7295, lon=139.7109）に変更してください」</li>
+                                <li><strong>大阪梅田の場合:</strong> 「気温取得地点を大阪梅田（lat=34.7024, lon=135.4937）に変更してください」</li>
+                                <li><strong>任意の座標:</strong> 「気温取得地点を（lat=○○, lon=○○）に変更してください」</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <h5><strong>方法2: 手動での変更</strong></h5>
                     <ol>
                         <li><strong>Services</strong> → <strong>WeatherService</strong> ファイル内で以下の行を探す：
                             <pre><code>private let latitude = 35.6583    // 渋谷の緯度
