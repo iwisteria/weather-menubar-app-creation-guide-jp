@@ -923,36 +923,12 @@ APIキーは後で設定し、アイコンも後から自作のものを追加�
                 </div>
 
                 <h3>4.2 アプリアイコンの設定</h3>
-<div class="substep">
-                    <h4>macOS用アイコン設定方法</h4>
-                    <ol>
-                        <li>Xcodeの左側プロジェクトナビゲーターで<strong>Assets</strong>を選択</li>
-                        <li><strong>AppIcon</strong>をクリック</li>
-                        <li>準備した<strong>1024x1024px</strong>のアイコンファイル（例：weatherapp.png）を配置</li>
-                        <li><strong>重要：</strong> macOSでは各サイズを手動で作成する必要があります</li>
-                    </ol>
-                    
-                    <div class="warning-box">
-                        <div class="warning-header">⚠️ macOS アイコンの重要な注意点</div>
-                        <div class="warning-content">
-                            <p><strong>自動生成されません：</strong> iOSアプリとは異なり、macOSアプリでは<strong>Xcodeがアイコンサイズを自動生成しません</strong>。</p>
-                            <p><strong>必要なサイズ：</strong> 以下の10サイズをすべて手動で作成・配置する必要があります：</p>
-                            <ul>
-                                <li>16x16px (1x, 2x)</li>
-                                <li>32x32px (1x, 2x)</li>
-                                <li>128x128px (1x, 2x)</li>
-                                <li>256x256px (1x, 2x)</li>
-                                <li>512x512px (1x, 2x)</li>
-                            </ul>
-                        </div>
-                    </div>
-                    
-                    <div class="info-box">
-                        <h4>🛠️ macOS標準ツールによる自動リサイズ方法</h4>
-                        <p>Xcodeが要求する各アイコンサイズを効率的に作成するため、macOS標準のsipsコマンドを活用します。Claude Codeに以下の指示を送ることで、1024x1024pxから必要な全サイズを自動生成できます：</p>
-                        <div class="copyable-code">
-                            <button class="copy-button" onclick="copyToClipboard(this, 'sips-resize-command')">📋 コピー</button>
-                            <pre><code id="sips-resize-command">Assets.xcassets/AppIcon.appiconsetディレクトリで、sipsコマンドを使って1024x1024pxのアイコンファイルから、Xcodeが要求する全サイズのアイコンを自動生成してください。
+                <div class="substep">
+                    <h4>自動生成による簡単設定方法（推奨）</h4>
+                    <p>macOS標準のsipsコマンドを活用して、1024x1024pxから必要な全サイズを自動生成します。Claude Codeに以下を依頼してください：</p>
+                    <div class="copyable-code">
+                        <button class="copy-button" onclick="copyToClipboard(this, 'sips-resize-command')">📋 コピー</button>
+                        <pre><code id="sips-resize-command">Assets.xcassets/AppIcon.appiconsetディレクトリで、sipsコマンドを使って1024x1024pxのアイコンファイルから、Xcodeが要求する全サイズのアイコンを自動生成してください。
 
 Xcodeが要求するファイル名と解像度：
 - app-icon-16.png (16x16px)
@@ -967,9 +943,22 @@ Xcodeが要求するファイル名と解像度：
 - 元ファイル (1024x1024px - 512@2x用)
 
 sipsコマンドで一括生成し、各ファイルが正しく作成されたことを確認してください。</code></pre>
-                        </div>
-                        <p><strong>このアプローチの利点：</strong> macOS標準ツールによる高品質リサイズ、Claude Codeによる自動実行、Xcodeの全要求サイズを完全対応</p>
                     </div>
+                    
+                    <div class="feature-showcase">
+                        <h4>💡 準備するもの</h4>
+                        <ul>
+                            <li><strong>1枚のみ：</strong> 1024x1024px のPNG画像</li>
+                            <li><strong>ファイル名：</strong> わかりやすい名前（例：weather-app-icon.png）</li>
+                            <li><strong>配置場所：</strong> Xcodeの左側プロジェクトナビゲーターで<strong>Assets</strong> → <strong>AppIcon</strong></li>
+                        </ul>
+                    </div>
+
+                    <div class="info-box">
+                        <h4>📝 macOSアイコンについて</h4>
+                        <p>macOSアプリでは複数のアイコンサイズ（16x16px〜512x512px）が必要ですが、上記の自動生成方法により簡単に作成できます。</p>
+                    </div>
+                </div>
                     
                 <h3>4.3 APIキーの設定</h3>
                 <div class="substep">
