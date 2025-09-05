@@ -442,7 +442,7 @@
                         <h3>完成イメージ</h3>
                         <div class="feature-list">
                             <div class="feature-item">
-                                <strong>☀️ 30.4°C 渋谷</strong><br>
+                                <strong>🌙 30.4°C 渋谷</strong><br>
                                 メニューバーに天気アイコン、詳細気温、地点名を表示
                             </div>
                             <div class="feature-item">
@@ -537,37 +537,28 @@
                 <div class="substep">
                     <h4>Homebrewのインストール（未インストールの場合）</h4>
                     <p>ターミナルで以下のコマンドを実行：</p>
-                    <div class="copyable-code">
-                        <button class="copy-button" onclick="copyToClipboard(this, 'homebrew-install')">📋 コピー</button>
-                        <pre><code id="homebrew-install">/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"</code></pre>
-                    </div>
+                    <pre><code>/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"</code></pre>
                 </div>
 
                 <div class="substep">
                     <h4>Node.jsのインストール</h4>
-                    <div class="copyable-code">
-                        <button class="copy-button" onclick="copyToClipboard(this, 'node-install')">📋 コピー</button>
-                        <pre><code id="node-install"># Homebrewを使用してNode.jsをインストール
+                    <pre><code># Homebrewを使用してNode.jsをインストール
 brew install node
 
 # インストール確認
 node --version
 npm --version</code></pre>
-                    </div>
                     <p>正常にインストールされると、バージョン番号が表示されます（例：v20.11.0）</p>
                 </div>
 
                 <h3>1.4 Claude Codeのインストール</h3>
                 <div class="substep">
                     <h4>npmを使用してインストール</h4>
-                    <div class="copyable-code">
-                        <button class="copy-button" onclick="copyToClipboard(this, 'claude-install')">📋 コピー</button>
-                        <pre><code id="claude-install"># グローバルインストール
+                    <pre><code># グローバルインストール
 npm install -g @anthropic-ai/claude-code
 
 # インストール確認
 claude --version</code></pre>
-                    </div>
                 </div>
 
                 <div class="info-box">
@@ -581,7 +572,7 @@ claude --version</code></pre>
                     </ul>
                 </div>
 
-                <h3>1.5 OpenWeatherMap APIキーの取得</h3>
+                <h3>1.4 OpenWeatherMap APIキーの取得</h3>
                 <div class="substep">
                     <ol>
                         <li><a href="https://openweathermap.org/" target="_blank">OpenWeatherMap</a> にアクセス</li>
@@ -690,3 +681,1118 @@ claude --version</code></pre>
                             <ul>
                                 <li><code>pwd</code> = "print working directory"（現在の作業ディレクトリを表示する）</li>
                                 <li>今自分がどのフォルダにいるかを教えてくれるコマンドです</li>
+                            </ul>
+                        </div>
+                        <p>このコマンドを入力してEnterを押すと、現在位置が表示されます（例：<code>/Users/あなたの名前</code>）</p>
+                    </div>
+
+                    <h5><strong>ステップ3:</strong> Documentsフォルダに移動</h5>
+                    <div class="substep">
+                        <p>以下のコマンドを入力してEnterを押します：</p>
+                        <div class="copyable-code">
+                            <button class="copy-button" onclick="copyToClipboard(this, 'cd-documents')">📋 コピー</button>
+                            <pre><code id="cd-documents">cd ~/Documents</code></pre>
+                        </div>
+                        <div class="feature-showcase">
+                            <h4>📝 コマンドの意味</h4>
+                            <ul>
+                                <li><code>cd</code> = "change directory"（ディレクトリを変更する）</li>
+                                <li><code>~</code> = あなたのホームフォルダを表す記号</li>
+                                <li><code>~/Documents</code> = あなたのDocumentsフォルダ</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <h5><strong>ステップ4:</strong> 開発用フォルダを作成</h5>
+                    <div class="substep">
+                        <p>以下のコマンドを入力してEnterを押します：</p>
+                        <div class="copyable-code">
+                            <button class="copy-button" onclick="copyToClipboard(this, 'mkdir-development')">📋 コピー</button>
+                            <pre><code id="mkdir-development">mkdir -p Development</code></pre>
+                        </div>
+                        <div class="feature-showcase">
+                            <h4>📝 コマンドの意味</h4>
+                            <ul>
+                                <li><code>mkdir</code> = "make directory"（フォルダを作成する）</li>
+                                <li><code>-p</code> = すでにフォルダが存在していてもエラーにならない</li>
+                                <li><code>Development</code> = 作成するフォルダの名前</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <h5><strong>ステップ5:</strong> 開発用フォルダに移動</h5>
+                    <div class="substep">
+                        <p>作成したDevelopmentフォルダに移動します：</p>
+                        <div class="copyable-code">
+                            <button class="copy-button" onclick="copyToClipboard(this, 'cd-development')">📋 コピー</button>
+                            <pre><code id="cd-development">cd Development</code></pre>
+                        </div>
+                    </div>
+
+                    <h5><strong>ステップ6:</strong> プロジェクト専用フォルダを作成</h5>
+                    <div class="substep">
+                        <p>天気アプリ専用のフォルダを作成します：</p>
+                        <div class="copyable-code">
+                            <button class="copy-button" onclick="copyToClipboard(this, 'mkdir-project')">📋 コピー</button>
+                            <pre><code id="mkdir-project">mkdir WeatherMenuBar</code></pre>
+                        </div>
+                    </div>
+
+                    <h5><strong>ステップ7:</strong> プロジェクトフォルダに移動</h5>
+                    <div class="substep">
+                        <p>作成したプロジェクトフォルダに移動します：</p>
+                        <div class="copyable-code">
+                            <button class="copy-button" onclick="copyToClipboard(this, 'cd-project')">📋 コピー</button>
+                            <pre><code id="cd-project">cd WeatherMenuBar</code></pre>
+                        </div>
+                    </div>
+
+                    <h5><strong>ステップ8:</strong> 最終確認</h5>
+                    <div class="substep">
+                        <p>正しい場所にいるか確認します：</p>
+                        <div class="copyable-code">
+                            <button class="copy-button" onclick="copyToClipboard(this, 'pwd-final')">📋 コピー</button>
+                            <pre><code id="pwd-final">pwd</code></pre>
+                        </div>
+                        <div class="info-box">
+                            <h4>💡 確認のポイント</h4>
+                            <p><code>pwd</code>コマンド（"print working directory"）で現在位置を確認し、以下のような表示になれば成功です：</p>
+                            <p><code>/Users/あなたの名前/Documents/Development/WeatherMenuBar</code></p>
+                        </div>
+                    </div>
+
+                    <div class="best-practices">
+                        <h4>💡 成功のコツ</h4>
+                        <ul>
+                            <li><strong>1つずつ実行:</strong> コマンドは1行ずつ、順番に実行してください</li>
+                            <li><strong>大文字小文字に注意:</strong> <code>Development</code>と<code>development</code>は別のものです</li>
+                            <li><strong>エラーが出たら:</strong> もう一度最初からやり直してください</li>
+                            <li><strong>コピペ推奨:</strong> コマンドはコピペして入力ミスを防いでください</li>
+                        </ul>
+                    </div>
+
+                    <p><strong>重要:</strong> プロジェクト名に日本語や特殊文字を使わず、英数字のみを使用してください。Xcodeとの互換性を確保するためです。</p>
+                </div>
+
+                <div class="warning-box">
+                    <div class="warning-header">ターミナル操作のポイント</div>
+                    <div class="warning-content">
+                        <ul>
+                            <li><strong>コマンドのコピー:</strong> 上記のコマンドを1行ずつコピーして、ターミナルに貼り付けて実行</li>
+                            <li><strong>エラーが出た場合:</strong> コマンドの打ち間違いがないか確認。わからない場合は最初からやり直す</li>
+                            <li><strong>ディレクトリの確認:</strong> <code>pwd</code>コマンドで現在位置を確認できます</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <h3>2.2 ターミナルでClaude Codeの起動</h3>
+                <div class="substep">
+                    <h4>Claude Codeの起動手順</h4>
+                    <p><strong>重要:</strong> WeatherMenuBarディレクトリ内にいることを確認してから実行してください。</p>
+                    <div class="copyable-code">
+                        <button class="copy-button" onclick="copyToClipboard(this, 'claude-start')">📋 コピー</button>
+                        <pre><code id="claude-start">claude</code></pre>
+                    </div>
+                    
+                    <h4>起動時の画面について</h4>
+                    <p>Claude Codeが正常に起動すると、ターミナルに以下のような表示が現れます：</p>
+                    <ul>
+                        <li>Claude Codeのロゴとバージョン情報</li>
+                        <li>現在のディレクトリパス（/Users/ユーザー名/Documents/Development/WeatherMenuBar）</li>
+                        <li>プロンプト（入力待ち状態）: <code>></code> または類似の記号</li>
+                    </ul>
+                    
+                    <p><strong>注意:</strong> Claude Codeが起動すると、ターミナルの表示が変わります。これは正常な動作です。</p>
+                </div>
+
+                <div class="best-practices">
+                    <h4>💡 Claude Code使用のコツ</h4>
+                    <ul>
+                        <li><strong>具体的な指示:</strong> 曖昧な表現ではなく、具体的な要件を明確に伝える</li>
+                        <li><strong>段階的なアプローチ:</strong> 複雑な機能は段階的に実装を依頼する</li>
+                        <li><strong>エラー報告:</strong> エラーが発生したら、エラーメッセージをそのまま貼り付ける</li>
+                        <li><strong>コンテキスト保持:</strong> 同じセッション内では前の会話内容を参照してくれる</li>
+                    </ul>
+                </div>
+
+                <h3>2.3 プロジェクト生成の詳細指示</h3>
+                <div class="substep">
+                    <h4>指示内容の構成について</h4>
+                    <p>以下の指示は、Claude Codeが完璧なSwiftプロジェクトを生成するために必要な全ての情報を含んでいます：</p>
+                    <ul>
+                        <li><strong>要件セクション:</strong> アプリの基本機能と動作</li>
+                        <li><strong>技術仕様:</strong> 使用する技術スタックとAPI</li>
+                        <li><strong>実装詳細:</strong> 具体的なコード要求</li>
+                        <li><strong>配置・設定:</strong> 地理座標とUI表示</li>
+                    </ul>
+                    <p><strong>重要:</strong> この指示は一つのメッセージとして、一度に全てClaude Codeに送信してください。</p>
+                </div>
+
+                <h4>Claude Codeへの指示内容</h4>
+                <div class="warning-box">
+                    <div class="warning-header">⚠️ 指示実行前の重要な確認事項</div>
+                    <div class="warning-content">
+                        <p>以下の指示をClaude Codeに送信する前に、必ず準備を確認してください：</p>
+                        <ul>
+                            <li>✅ <strong>WeatherMenuBarディレクトリ内</strong>でClaude Codeを起動済み</li>
+                            <li>✅ <strong>OpenWeatherMap APIキー</strong>を取得済み</li>
+                            <li>✅ <strong>地理座標</strong>を確認済み（このガイドでは渋谷の座標を使用）</li>
+                        </ul>
+                        <p><strong>重要:</strong> APIキー取得には時間がかかることがあります。事前に準備しておいてください。</p>
+                    </div>
+                </div>
+
+                <div class="copyable-code">
+                    <button class="copy-button" onclick="copyToClipboard(this, 'claude-instruction')">📋 完全な指示をコピー</button>
+                    <pre><code id="claude-instruction">macOSメニューバー天気アプリを作成してください。
+
+## 基本要件
+- **アプリ名**: WeatherMenuBar  
+- **表示位置**: macOSメニューバーに常駐
+- **表示内容**: 天気アイコン + 気温 + 地点名（例: "🌙 30.4°C 渋谷"）
+- **クリック動作**: 詳細な気象情報をポップオーバーで表示
+- **自動更新**: 10分間隔で気象データを更新
+
+## 技術仕様
+- **開発言語**: Swift
+- **フレームワーク**: SwiftUI + AppKit（NSStatusBar使用）
+- **気象API**: OpenWeatherMap One Call API 3.0
+- **対象OS**: macOS 13.0+
+- **アーキテクチャ**: MVVM
+- **並行処理**: async/await使用
+
+## 実装詳細
+
+### 1. プロジェクト構成
+WeatherMenuBar.xcodeproj として以下を作成:
+- **ContentView.swift**: メインのSwiftUIビュー
+- **WeatherMenuBarApp.swift**: アプリエントリーポイント  
+- **WeatherService.swift**: API通信サービス
+- **WeatherData.swift**: データモデル
+- **WeatherViewModel.swift**: ビューモデル
+- **MenuBarManager.swift**: NSStatusBar管理
+- **Info.plist**: アプリ設定
+
+### 2. 地理座標設定
+```
+緯度: 35.6594
+経度: 139.7006
+地点名: "渋谷"
+```
+
+### 3. API仕様
+- **エンドポイント**: `https://api.openweathermap.org/data/3.0/onecall`
+- **必須パラメータ**: lat, lon, appid, units=metric, lang=ja
+- **取得データ**: 気温、体感温度、湿度、風速、気圧、天気コード、天気説明
+- **エラーハンドリング**: ネットワーク接続、API制限、無効なレスポンス
+
+### 4. UI仕様
+
+#### メニューバー表示
+- **フォーマット**: "天気アイコン 気温°C 地点名"
+- **例**: "🌙 30.4°C 渋谷"  
+- **フォント**: システムフォント、メニューバーに適したサイズ
+- **色**: システム標準色（ダークモード対応）
+
+#### 詳細ポップオーバー
+クリック時に表示する情報:
+```
+🌙 晴れ時々曇り
+現在: 30.4°C（体感 32.1°C）
+湿度: 65%
+風速: 3.2 m/s
+気圧: 1013 hPa
+最終更新: 14:25
+```
+
+### 5. 天気アイコンマッピング
+OpenWeatherMap天気コードに対応したシステム絵文字:
+- **晴れ(01d)**: ☀️
+- **晴れ(01n)**: 🌙  
+- **曇り(02-04)**: ☁️
+- **雨(09-10)**: 🌧️
+- **雷雨(11)**: ⛈️
+- **雪(13)**: ❄️
+- **霧(50)**: 🌫️
+
+### 6. エラー処理
+- **ネットワークエラー**: "接続エラー" 表示、リトライ機能
+- **APIエラー**: エラーコード別メッセージ表示
+- **データ解析エラー**: デフォルト値で継続動作
+- **位置情報エラー**: 設定済み座標使用
+
+### 7. パフォーマンス
+- **メモリ使用量**: 最小限に抑制
+- **CPU使用率**: バックグラウンドでの軽量動作
+- **バッテリー**: 効率的なAPI呼び出しスケジュール
+- **キャッシュ**: 前回の気象データを保持
+
+## 実装指示
+
+1. **即座に実行**: 完全に動作するプロジェクトを生成
+2. **エラーフリー**: コンパイルエラー、実行時エラーなし
+3. **本格運用**: APIキー設定後すぐに実用可能
+4. **拡張性**: 今後の機能追加に対応可能な設計
+5. **ベストプラクティス**: Swift/SwiftUIの推奨パターン採用
+
+APIキーは後で設定するため、プレースホルダー文字列を使用してください。
+Xcodeで開いてすぐにビルド・実行できる完全なプロジェクトを作成してください。</code></pre>
+                </div>
+
+                <div class="info-box">
+                    <h4>📋 指示の送信方法</h4>
+                    <ol>
+                        <li>上記の「📋 完全な指示をコピー」ボタンをクリック</li>
+                        <li>Claude Codeに<strong>そのまま貼り付け</strong>してEnterキーを押す</li>
+                        <li>Claude Codeがプロジェクトの生成を開始します</li>
+                    </ol>
+                    <p><strong>注意:</strong> 生成には数分かかる場合があります。完了まで待機してください。</p>
+                </div>
+
+                <div class="best-practices">
+                    <h4>💡 成功のためのポイント</h4>
+                    <ul>
+                        <li><strong>全文コピー:</strong> 指示は省略せず、完全にコピーして送信</li>
+                        <li><strong>待機:</strong> 生成プロセス中は追加の指示を送らず待機</li>
+                        <li><strong>確認:</strong> 生成完了後、ファイルが作成されたことを確認</li>
+                        <li><strong>実行:</strong> 生成後はXcodeでプロジェクトを開いて動作確認</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="step" id="step3">
+                <div class="step-number">3</div>
+                <h2>アイコン準備</h2>
+
+                <h3>3.1 アイコン画像の準備</h3>
+                <div class="substep">
+                    <h4>Claude Codeでのアイコン生成</h4>
+                    <p>Claude Codeは画像生成機能を持っているため、アプリ用のアイコンを自動生成できます。</p>
+                    
+                    <div class="copyable-code">
+                        <button class="copy-button" onclick="copyToClipboard(this, 'icon-request')">📋 コピー</button>
+                        <pre><code id="icon-request">WeatherMenuBarアプリ用のmacOSアプリアイコンを生成してください。
+
+要件:
+- サイズ: 1024×1024 px
+- 形式: PNG
+- デザイン: 天気・気温をイメージするシンプルでモダンなデザイン
+- 色調: macOSに調和するカラーパレット
+- 要素: 太陽、雲、温度計などの天気関連要素を含む
+- スタイル: フラットデザインまたはややグラデーション
+- macOSアイコンデザインガイドラインに準拠
+
+生成後、AppIcon.appiconset用の各サイズも自動生成してください。</code></pre>
+                    </div>
+
+                    <div class="info-box">
+                        <h4>🎨 アイコンのカスタマイズ</h4>
+                        <p>Claude Codeが生成したアイコンが気に入らない場合は、以下のように修正依頼することができます：</p>
+                        <ul>
+                            <li><strong>色の変更:</strong> 「もう少し青っぽい色にしてください」</li>
+                            <li><strong>要素の調整:</strong> 「雲を小さくして太陽を大きくしてください」</li>
+                            <li><strong>スタイル変更:</strong> 「よりミニマルなデザインにしてください」</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <h3>3.2 アイコンファイルの配置</h3>
+                <div class="substep">
+                    <h4>自動配置の確認</h4>
+                    <p>Claude Codeは生成したアイコンを自動的に適切な場所に配置します：</p>
+                    <ul>
+                        <li><strong>WeatherMenuBar/Assets.xcassets/AppIcon.appiconset/</strong> にアイコンセットが配置されます</li>
+                        <li>必要なサイズ（16px, 32px, 64px, 128px, 256px, 512px, 1024px）が自動生成されます</li>
+                        <li>Contents.jsonファイルも自動的に設定されます</li>
+                    </ul>
+
+                    <div class="warning-box">
+                        <div class="warning-content">
+                            <h4>自動配置が失敗した場合</h4>
+                            <p>稀にファイル配置が失敗する場合があります。その際は以下のメッセージでClaude Codeに依頼してください：</p>
+                            <code>「アイコンファイルをXcodeプロジェクトの適切な場所に配置してください」</code>
+                        </div>
+                    </div>
+                </div>
+
+                <h3>3.3 Xcodeでのアイコン確認</h3>
+                <div class="substep">
+                    <h4>確認手順</h4>
+                    <ol>
+                        <li>Xcodeでプロジェクトを開く</li>
+                        <li>左のナビゲータで <strong>Assets.xcassets</strong> をクリック</li>
+                        <li><strong>AppIcon</strong> を選択</li>
+                        <li>各サイズのアイコンが正しく配置されていることを確認</li>
+                    </ol>
+
+                    <div class="best-practices">
+                        <h4>💡 アイコン品質のチェックポイント</h4>
+                        <ul>
+                            <li><strong>鮮明さ:</strong> 各サイズで画像がぼやけていないか</li>
+                            <li><strong>一貫性:</strong> 全サイズで同じデザインが保たれているか</li>
+                            <li><strong>視認性:</strong> 小さいサイズでも要素が判別できるか</li>
+                            <li><strong>macOS調和:</strong> システム他のアイコンと調和しているか</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="step" id="step4">
+                <div class="step-number">4</div>
+                <h2>Xcodeセットアップ</h2>
+
+                <h3>4.1 Xcodeでプロジェクトを開く</h3>
+                <div class="substep">
+                    <h4>プロジェクトファイルの確認</h4>
+                    <p>Claude Codeがプロジェクトを正常に生成していることを確認します：</p>
+                    
+                    <div class="copyable-code">
+                        <button class="copy-button" onclick="copyToClipboard(this, 'ls-check')">📋 コピー</button>
+                        <pre><code id="ls-check">ls -la</code></pre>
+                    </div>
+                    
+                    <p>以下のファイルが存在することを確認してください：</p>
+                    <ul>
+                        <li><code>WeatherMenuBar.xcodeproj</code> - Xcodeプロジェクトファイル</li>
+                        <li><code>WeatherMenuBar/</code> - ソースコードディレクトリ</li>
+                        <li><code>README.md</code> または類似のドキュメント</li>
+                    </ul>
+                </div>
+
+                <div class="substep">
+                    <h4>Xcodeでの開き方</h4>
+                    
+                    <h5>方法1: ターミナルから起動</h5>
+                    <div class="copyable-code">
+                        <button class="copy-button" onclick="copyToClipboard(this, 'xcode-open')">📋 コピー</button>
+                        <pre><code id="xcode-open">open WeatherMenuBar.xcodeproj</code></pre>
+                    </div>
+
+                    <h5>方法2: Finderから起動</h5>
+                    <ol>
+                        <li>Finderを開く</li>
+                        <li><code>WeatherMenuBar</code>フォルダに移動</li>
+                        <li><code>WeatherMenuBar.xcodeproj</code>をダブルクリック</li>
+                    </ol>
+
+                    <div class="warning-box">
+                        <div class="warning-content">
+                            <h4>Xcodeが起動しない場合</h4>
+                            <ul>
+                                <li><strong>Xcode未インストール:</strong> App Storeから最新版をインストール</li>
+                                <li><strong>旧バージョン:</strong> macOS Venturaに対応した最新版に更新</li>
+                                <li><strong>初回起動:</strong> ライセンス同意とコンポーネントインストールが必要</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <h3>4.2 APIキーの設定</h3>
+                <div class="substep">
+                    <h4>設定ファイルの確認</h4>
+                    <p>Claude Codeが生成したプロジェクトには、APIキー用のプレースホルダーが含まれています。以下の方法で実際のAPIキーを設定します：</p>
+
+                    <h5>WeatherService.swiftファイルを開く</h5>
+                    <ol>
+                        <li>Xcodeの左パネル（Navigator）で<strong>WeatherService.swift</strong>を探す</li>
+                        <li>ファイルをクリックして開く</li>
+                        <li><code>YOUR_API_KEY_HERE</code>または類似のプレースホルダーを探す</li>
+                        <li>プレースホルダーを取得したOpenWeatherMap APIキーに置き換える</li>
+                    </ol>
+
+                    <div class="copyable-code">
+                        <button class="copy-button" onclick="copyToClipboard(this, 'api-key-example')">📋 参考</button>
+                        <pre><code id="api-key-example">// 変更前
+private let apiKey = "YOUR_API_KEY_HERE"
+
+// 変更後（あなたのAPIキーに置き換える）
+private let apiKey = "a1b2c3d4e5f6g7h8i9j0k1l2m3n4o5p6"</code></pre>
+                    </div>
+
+                    <div class="warning-box">
+                        <div class="warning-content">
+                            <h4>⚠️ セキュリティ重要事項</h4>
+                            <ul>
+                                <li><strong>秘匿性:</strong> APIキーを他人と共有しない</li>
+                                <li><strong>Git管理:</strong> APIキーをgitリポジトリにコミットしない</li>
+                                <li><strong>公開禁止:</strong> ソースコードを公開する際はAPIキーを削除</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <h3>4.3 プロジェクト設定の確認</h3>
+                <div class="substep">
+                    <h4>基本設定の確認</h4>
+                    
+                    <h5>プロジェクト設定を開く</h5>
+                    <ol>
+                        <li>Xcodeの左パネルで<strong>WeatherMenuBar</strong>プロジェクトファイル（青いアイコン）をクリック</li>
+                        <li>中央に表示される<strong>TARGETS</strong>セクションで<strong>WeatherMenuBar</strong>を選択</li>
+                        <li><strong>General</strong>タブが選択されていることを確認</li>
+                    </ol>
+
+                    <h5>確認すべき設定項目</h5>
+                    <div class="substep">
+                        <h4>Identity セクション</h4>
+                        <ul>
+                            <li><strong>Display Name:</strong> WeatherMenuBar</li>
+                            <li><strong>Bundle Identifier:</strong> 自動生成された値（例：com.yourname.WeatherMenuBar）</li>
+                            <li><strong>Version:</strong> 1.0</li>
+                        </ul>
+
+                        <h4>Deployment Info セクション</h4>
+                        <ul>
+                            <li><strong>macOS Deployment Target:</strong> 13.0 または以降</li>
+                            <li><strong>Supported Destinations:</strong> Mac にチェック</li>
+                        </ul>
+                    </div>
+
+                    <div class="info-box">
+                        <h4>🔧 設定の自動調整</h4>
+                        <p>Claude Codeが正常にプロジェクトを生成していれば、これらの設定は自動的に適切な値に設定されているはずです。問題がある場合のみ手動で調整してください。</p>
+                    </div>
+                </div>
+
+                <h3>4.4 初回ビルドテスト</h3>
+                <div class="substep">
+                    <h4>ビルドの実行</h4>
+                    <p>APIキー設定後、正常にコンパイルされることを確認します：</p>
+                    
+                    <ol>
+                        <li>Xcodeの上部で<strong>My Mac</strong>が選択されていることを確認</li>
+                        <li><kbd>⌘ + B</kbd> キーを押すか、メニューバーから Product → Build を選択</li>
+                        <li>ビルド結果を確認（通常、数秒〜数十秒で完了）</li>
+                    </ol>
+
+                    <div class="feature-showcase">
+                        <h4>✅ ビルド成功の確認方法</h4>
+                        <ul>
+                            <li><strong>成功表示:</strong> 「Build Succeeded」メッセージ</li>
+                            <li><strong>エラーなし:</strong> 左パネルにエラー（赤い●）やワーニング（黄色い▲）がない</li>
+                            <li><strong>音声:</strong> 成功音（設定により）</li>
+                        </ul>
+                    </div>
+
+                    <div class="error-example">
+                        <h4>❌ ビルドエラーが出た場合</h4>
+                        <p>エラーメッセージをそのままClaude Codeに報告してください：</p>
+                        <p><strong>報告例:</strong></p>
+                        <code>「ビルド時に以下のエラーが発生しました: [エラーメッセージをコピー&ペースト]」</code>
+                    </div>
+                </div>
+            </div>
+
+            <div class="step" id="step5">
+                <div class="step-number">5</div>
+                <h2>エラー修正</h2>
+
+                <h3>5.1 よくあるビルドエラーと対処法</h3>
+                <div class="substep">
+                    <h4>エラーパターンと解決策</h4>
+                    
+                    <div class="error-example">
+                        <h4>1. API Key関連エラー</h4>
+                        <p><strong>エラー例:</strong> "Invalid API key" または "Unauthorized"</p>
+                        <p><strong>原因:</strong> APIキーが正しく設定されていない</p>
+                        <p><strong>解決:</strong></p>
+                        <ul>
+                            <li>OpenWeatherMapで取得したAPIキーを再確認</li>
+                            <li>WeatherService.swift内のプレースホルダー置き換えを確認</li>
+                            <li>APIキーの前後にスペースや改行が入っていないか確認</li>
+                        </ul>
+                    </div>
+
+                    <div class="error-example">
+                        <h4>2. Import関連エラー</h4>
+                        <p><strong>エラー例:</strong> "No such module" または "Module not found"</p>
+                        <p><strong>原因:</strong> 必要なフレームワークがインポートされていない</p>
+                        <p><strong>解決:</strong> Claude Codeに以下を依頼</p>
+                        <div class="copyable-code">
+                            <button class="copy-button" onclick="copyToClipboard(this, 'import-fix')">📋 コピー</button>
+                            <pre><code id="import-fix">以下のインポートエラーを修正してください:
+[エラーメッセージをここにコピー&ペースト]</code></pre>
+                        </div>
+                    </div>
+
+                    <div class="error-example">
+                        <h4>3. SwiftUI関連エラー</h4>
+                        <p><strong>エラー例:</strong> "Cannot convert value" または "Type mismatch"</p>
+                        <p><strong>原因:</strong> SwiftUIのデータバインディングまたは型の問題</p>
+                        <p><strong>解決:</strong> Claude Codeに以下を依頼</p>
+                        <div class="copyable-code">
+                            <button class="copy-button" onclick="copyToClipboard(this, 'swiftui-fix')">📋 コピー</button>
+                            <pre><code id="swiftui-fix">SwiftUIのコンパイルエラーを修正してください:
+[エラーメッセージをここにコピー&ペースト]</code></pre>
+                        </div>
+                    </div>
+                </div>
+
+                <h3>5.2 実行時エラーの対処</h3>
+                <div class="substep">
+                    <h4>権限関連の問題</h4>
+                    
+                    <div class="warning-box">
+                        <div class="warning-content">
+                            <h4>macOSセキュリティ設定</h4>
+                            <p>初回実行時にmacOSのセキュリティ機能により実行がブロックされる場合があります：</p>
+                            <ol>
+                                <li><strong>システム設定</strong> を開く</li>
+                                <li><strong>プライバシーとセキュリティ</strong> を選択</li>
+                                <li><strong>セキュリティ</strong> セクションで「このまま許可」をクリック</li>
+                            </ol>
+                        </div>
+                    </div>
+
+                    <h4>ネットワーク接続エラー</h4>
+                    <p>アプリがAPIにアクセスできない場合：</p>
+                    <ul>
+                        <li><strong>インターネット接続</strong>を確認</li>
+                        <li><strong>ファイアウォール設定</strong>を確認</li>
+                        <li><strong>VPNやプロキシ</strong>の影響を確認</li>
+                    </ul>
+                </div>
+
+                <h3>5.3 Claude Codeによる自動修正</h3>
+                <div class="substep">
+                    <h4>効果的なエラー報告の方法</h4>
+                    
+                    <div class="best-practices">
+                        <h4>💡 エラー報告のベストプラクティス</h4>
+                        <ol>
+                            <li><strong>完全なエラーメッセージ</strong>をコピー&ペースト</li>
+                            <li><strong>発生タイミング</strong>を明記（ビルド時 or 実行時）</li>
+                            <li><strong>実行環境</strong>を伝える（macOSバージョン、Xcodeバージョン）</li>
+                            <li><strong>再現手順</strong>を簡潔に説明</li>
+                        </ol>
+                    </div>
+
+                    <h4>報告テンプレート</h4>
+                    <div class="copyable-code">
+                        <button class="copy-button" onclick="copyToClipboard(this, 'error-template')">📋 コピー</button>
+                        <pre><code id="error-template">以下のエラーが発生しました。修正してください。
+
+【エラータイプ】
+□ ビルドエラー  □ 実行時エラー  □ その他
+
+【エラーメッセージ】
+[ここにエラーメッセージをコピー&ペースト]
+
+【発生状況】
+[何をした時にエラーが起きたかを記載]
+
+【環境】
+- macOS: [バージョン]
+- Xcode: [バージョン]</code></pre>
+                    </div>
+
+                    <div class="info-box">
+                        <h4>🚀 Claude Codeの修正能力</h4>
+                        <p>Claude Codeは以下のエラーを自動修正できます：</p>
+                        <ul>
+                            <li><strong>コンパイルエラー:</strong> 構文エラー、型エラー、インポート問題</li>
+                            <li><strong>ロジックエラー:</strong> APIレスポンス処理、データバインディング</li>
+                            <li><strong>設定エラー:</strong> プロジェクト設定、Info.plist、権限設定</li>
+                            <li><strong>UIエラー:</strong> SwiftUIレイアウト、制約の問題</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="step" id="step6">
+                <div class="step-number">6</div>
+                <h2>ビルド・実行</h2>
+
+                <h3>6.1 最終ビルド</h3>
+                <div class="substep">
+                    <h4>リリースビルドの実行</h4>
+                    <p>開発中のエラーが全て修正されたら、最終的なリリースビルドを実行します：</p>
+                    
+                    <ol>
+                        <li>Xcodeで <strong>Product</strong> → <strong>Scheme</strong> → <strong>Edit Scheme...</strong> を選択</li>
+                        <li>左側で <strong>Run</strong> を選択</li>
+                        <li><strong>Build Configuration</strong> を <strong>Release</strong> に設定</li>
+                        <li><strong>Close</strong> をクリック</li>
+                        <li><kbd>⌘ + B</kbd> でビルドを実行</li>
+                    </ol>
+
+                    <div class="info-box">
+                        <h4>🏗️ DebugとReleaseの違い</h4>
+                        <ul>
+                            <li><strong>Debug:</strong> 開発用、デバッグ情報付き、最適化なし</li>
+                            <li><strong>Release:</strong> 配布用、デバッグ情報なし、最適化あり</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <h3>6.2 アプリの実行</h3>
+                <div class="substep">
+                    <h4>Xcode内での実行</h4>
+                    <ol>
+                        <li><kbd>⌘ + R</kbd> キーを押すか、<strong>Product</strong> → <strong>Run</strong> を選択</li>
+                        <li>アプリがビルドされ、自動的に起動します</li>
+                        <li>macOSのメニューバー（画面上部）を確認</li>
+                    </ol>
+
+                    <div class="feature-showcase">
+                        <h4>✅ 正常動作の確認ポイント</h4>
+                        <ul>
+                            <li><strong>メニューバー表示:</strong> 天気アイコン + 気温 + 地点名が表示される</li>
+                            <li><strong>クリック動作:</strong> メニューバーのアイコンをクリックで詳細情報表示</li>
+                            <li><strong>データ更新:</strong> 実際の気象データが表示される（プレースホルダーでない）</li>
+                            <li><strong>エラーなし:</strong> Xcodeのコンソールにエラーメッセージが表示されない</li>
+                        </ul>
+                    </div>
+
+                    <h4>初回実行時の注意点</h4>
+                    <ul>
+                        <li><strong>ネットワーク権限:</strong> 初回のAPI通信時に権限確認ダイアログが表示される場合があります</li>
+                        <li><strong>データロード:</strong> 最初の気象データ取得に数秒かかることがあります</li>
+                        <li><strong>セキュリティ:</strong> macOSが未署名アプリの実行を警告する場合があります</li>
+                    </ul>
+                </div>
+
+                <h3>6.3 スタンドアロン実行</h3>
+                <div class="substep">
+                    <h4>Xcodeを閉じても動作するようにする</h4>
+                    
+                    <h5>アプリケーションファイルの場所</h5>
+                    <p>ビルドが成功すると、実行可能なアプリケーションファイルが以下の場所に作成されます：</p>
+                    <code>~/Library/Developer/Xcode/DerivedData/WeatherMenuBar-[ランダム文字]/Build/Products/Debug/WeatherMenuBar.app</code>
+
+                    <h5>アプリケーションフォルダへのコピー</h5>
+                    <p>日常使用のため、アプリケーションフォルダにコピーすることを推奨します：</p>
+                    <ol>
+                        <li>Finderで <strong>DerivedData</strong> の場所を開く</li>
+                        <li><strong>WeatherMenuBar.app</strong> をコピー</li>
+                        <li><strong>アプリケーション</strong> フォルダに貼り付け</li>
+                        <li>アプリケーションフォルダから直接起動</li>
+                    </ol>
+
+                    <div class="best-practices">
+                        <h4>💡 日常使用のコツ</h4>
+                        <ul>
+                            <li><strong>自動起動:</strong> ログイン時の自動起動設定</li>
+                            <li><strong>Dockから非表示:</strong> メニューバーのみの表示</li>
+                            <li><strong>更新確認:</strong> APIデータの更新状況を定期確認</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <h3>6.4 動作テスト</h3>
+                <div class="substep">
+                    <h4>機能テストチェックリスト</h4>
+                    
+                    <div class="feature-showcase">
+                        <h4>📋 テスト項目</h4>
+                        <div style="display: grid; gap: 1rem;">
+                            <div class="comparison-item">
+                                <strong>☐ メニューバー表示</strong><br>
+                                天気アイコン、気温、地点名が正しく表示される
+                            </div>
+                            <div class="comparison-item">
+                                <strong>☐ クリック操作</strong><br>
+                                クリック時に詳細な気象情報ポップオーバーが表示される
+                            </div>
+                            <div class="comparison-item">
+                                <strong>☐ データ精度</strong><br>
+                                表示される気温が他の天気アプリと概ね一致する
+                            </div>
+                            <div class="comparison-item">
+                                <strong>☐ 自動更新</strong><br>
+                                10分後に気象データが更新される
+                            </div>
+                            <div class="comparison-item">
+                                <strong>☐ エラーハンドリング</strong><br>
+                                ネットワーク切断時に適切なエラー表示
+                            </div>
+                            <div class="comparison-item">
+                                <strong>☐ システム統合</strong><br>
+                                macOSのダークモードに対応
+                            </div>
+                        </div>
+                    </div>
+
+                    <h4>パフォーマンステスト</h4>
+                    <ul>
+                        <li><strong>起動速度:</strong> アプリが数秒以内に起動する</li>
+                        <li><strong>メモリ使用量:</strong> Activity Monitor で確認（通常20MB以下）</li>
+                        <li><strong>CPU使用率:</strong> バックグラウンドで軽量動作（1%以下）</li>
+                        <li><strong>ネットワーク使用量:</strong> 10分毎の軽微なAPI通信のみ</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="step" id="step7">
+                <div class="step-number">7</div>
+                <h2>機能拡張</h2>
+
+                <h3>7.1 基本機能の拡張</h3>
+                <div class="substep">
+                    <h4>表示地点の変更</h4>
+                    <p>現在は渋谷の座標が設定されていますが、お好みの地点に変更できます：</p>
+                    
+                    <div class="copyable-code">
+                        <button class="copy-button" onclick="copyToClipboard(this, 'location-change')">📋 コピー</button>
+                        <pre><code id="location-change">WeatherServiceの地理座標を以下に変更してください:
+
+緯度: [新しい緯度]
+経度: [新しい経度]  
+地点名: "[新しい地点名]"
+
+例）東京駅の場合:
+緯度: 35.6812
+経度: 139.7671
+地点名: "東京"</code></pre>
+                    </div>
+
+                    <div class="info-box">
+                        <h4>🌍 主要都市の座標</h4>
+                        <ul>
+                            <li><strong>新宿:</strong> 35.6896, 139.6917</li>
+                            <li><strong>池袋:</strong> 35.7295, 139.7109</li>
+                            <li><strong>横浜:</strong> 35.4657, 139.6201</li>
+                            <li><strong>大阪:</strong> 34.6937, 135.5023</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="substep">
+                    <h4>更新間隔の調整</h4>
+                    <p>デフォルトの10分間隔を変更することができます：</p>
+                    
+                    <div class="copyable-code">
+                        <button class="copy-button" onclick="copyToClipboard(this, 'update-interval')">📋 コピー</button>
+                        <pre><code id="update-interval">天気データの自動更新間隔を[X]分に変更してください。
+
+推奨設定:
+- 5分: よりリアルタイム（API使用量増加）
+- 15分: バランス重視
+- 30分: バッテリー節約重視</code></pre>
+                    </div>
+
+                    <div class="warning-box">
+                        <div class="warning-content">
+                            <h4>API制限について</h4>
+                            <p>OpenWeatherMapの無料プランは1日1,000回まで。更新間隔を短くしすぎると制限に到達する可能性があります：</p>
+                            <ul>
+                                <li><strong>5分間隔:</strong> 1日288回（無料枠内）</li>
+                                <li><strong>3分間隔:</strong> 1日480回（無料枠内）</li>
+                                <li><strong>1分間隔:</strong> 1日1,440回（制限超過リスク）</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <h3>7.2 高度な機能追加</h3>
+                <div class="substep">
+                    <h4>複数地点対応</h4>
+                    <p>複数の地点の天気を切り替えて表示する機能：</p>
+                    
+                    <div class="copyable-code">
+                        <button class="copy-button" onclick="copyToClipboard(this, 'multi-location')">📋 コピー</button>
+                        <pre><code id="multi-location">複数地点対応機能を追加してください:
+
+要件:
+- 3つの地点を設定可能（渋谷、新宿、東京駅）
+- メニューバークリック時に地点選択メニューを表示
+- 選択された地点の天気データを表示・更新
+- 最後に選択された地点を保存・復元
+
+UI仕様:
+- 詳細ポップオーバーに地点選択ボタンを追加
+- 地点変更時は即座にデータを更新
+- 現在選択中の地点を視覚的に識別可能</code></pre>
+                    </div>
+                </div>
+
+                <div class="substep">
+                    <h4>天気予報表示</h4>
+                    <p>現在の天気に加えて、今後の天気予報を表示：</p>
+                    
+                    <div class="copyable-code">
+                        <button class="copy-button" onclick="copyToClipboard(this, 'weather-forecast')">📋 コピー</button>
+                        <pre><code id="weather-forecast">天気予報表示機能を追加してください:
+
+要件:
+- 3時間毎の予報を8回分（24時間分）
+- 詳細ポップオーバーに予報セクションを追加
+- 時刻、天気アイコン、気温を表示
+
+表示例:
+現在: 🌙 30.4°C
+15時: ☁️ 28°C
+18時: 🌧️ 25°C
+21時: ☁️ 23°C
+...
+
+データ取得:
+OpenWeatherMap One Call APIの hourly データを使用</code></pre>
+                    </div>
+                </div>
+
+                <div class="substep">
+                    <h4>通知機能</h4>
+                    <p>天気変化や警報の通知機能：</p>
+                    
+                    <div class="copyable-code">
+                        <button class="copy-button" onclick="copyToClipboard(this, 'notification-feature')">📋 コピー</button>
+                        <pre><code id="notification-feature">天気通知機能を追加してください:
+
+要件:
+- 大幅な気温変化時の通知（5度以上の変化）
+- 雨の開始・終了時の通知  
+- 気象警報発令時の通知
+- 通知のオン・オフ設定
+
+実装:
+- UserNotifications framework使用
+- バックグラウンドでの定期チェック
+- 通知権限のリクエスト処理
+- 設定保存機能</code></pre>
+                    </div>
+                </div>
+
+                <h3>7.3 UI・UXの改善</h3>
+                <div class="substep">
+                    <h4>カスタマイズ可能なテーマ</h4>
+                    <p>ユーザーが見た目をカスタマイズできる機能：</p>
+                    
+                    <div class="copyable-code">
+                        <button class="copy-button" onclick="copyToClipboard(this, 'theme-customization')">📋 コピー</button>
+                        <pre><code id="theme-customization">テーマカスタマイズ機能を追加してください:
+
+要件:
+- メニューバー表示色の選択（白、黒、システム標準）
+- 文字サイズの調整（小、標準、大）
+- 表示内容の選択（気温のみ、地点名なし、など）
+- 設定画面の追加
+
+UI:
+- 設定画面をメニューに追加
+- リアルタイムプレビュー
+- 設定の保存・復元
+- デフォルト設定リセット機能</code></pre>
+                    </div>
+                </div>
+
+                <div class="substep">
+                    <h4>アニメーション効果</h4>
+                    <p>視覚的な魅力を向上させるアニメーション：</p>
+                    
+                    <div class="copyable-code">
+                        <button class="copy-button" onclick="copyToClipboard(this, 'animation-effects')">📋 コピー</button>
+                        <pre><code id="animation-effects">アニメーション効果を追加してください:
+
+要件:
+- データ更新時のスムーズな数値変化アニメーション
+- ポップオーバーの表示・非表示アニメーション
+- 天気アイコンの微細なアニメーション（雨の動き等）
+- ローディング時のインジケーター
+
+実装:
+- SwiftUIのwithAnimation使用
+- 適度な速度（0.3-0.5秒）
+- システム標準のイージング関数
+- パフォーマンスに配慮した実装</code></pre>
+                    </div>
+                </div>
+            </div>
+
+            <div class="step" id="step8">
+                <div class="step-number">8</div>
+                <h2>アプリ配布</h2>
+
+                <h3>8.1 個人利用での配布準備</h3>
+                <div class="substep">
+                    <h4>アプリの署名</h4>
+                    <p>他のMacでも動作するようにアプリに署名を追加します：</p>
+                    
+                    <div class="info-box">
+                        <h4>🔏 署名の種類</h4>
+                        <ul>
+                            <li><strong>自己署名:</strong> 開発者用、無料</li>
+                            <li><strong>Apple Developer署名:</strong> 年額12,800円、App Store配布可能</li>
+                            <li><strong>無署名配布:</strong> セキュリティ警告あり</li>
+                        </ul>
+                    </div>
+
+                    <h4>自己署名での配布</h4>
+                    <ol>
+                        <li>Xcodeでプロジェクトを開く</li>
+                        <li><strong>Signing & Capabilities</strong> タブを選択</li>
+                        <li><strong>Automatically manage signing</strong> にチェック</li>
+                        <li><strong>Team</strong> で個人のApple IDを選択</li>
+                        <li>ビルドを実行して署名されたアプリを作成</li>
+                    </ol>
+
+                    <div class="warning-box">
+                        <div class="warning-content">
+                            <h4>配布時の注意事項</h4>
+                            <ul>
+                                <li>自己署名アプリは7日間の有効期限があります</li>
+                                <li>他のMacでは初回実行時にセキュリティ警告が表示されます</li>
+                                <li>「システム設定 → プライバシーとセキュリティ」で許可が必要です</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <h3>8.2 配布パッケージの作成</h3>
+                <div class="substep">
+                    <h4>dmgファイルの作成</h4>
+                    <p>macOS標準の配布形式であるdmgファイルを作成します：</p>
+                    
+                    <div class="copyable-code">
+                        <button class="copy-button" onclick="copyToClipboard(this, 'create-dmg')">📋 コピー</button>
+                        <pre><code id="create-dmg">WeatherMenuBarアプリのdmg配布パッケージを作成してください。
+
+要件:
+- アプリケーションフォルダへのエイリアス
+- 背景画像（アプリのアイコンを使用）
+- インストール手順のテキストファイル
+- 適切なウィンドウサイズとアイコン配置
+
+作成手順も教えてください。</code></pre>
+                    </div>
+
+                    <div class="best-practices">
+                        <h4>💡 配布パッケージのベストプラクティス</h4>
+                        <ul>
+                            <li><strong>READMEファイル:</strong> インストール方法と使用方法を記載</li>
+                            <li><strong>ライセンスファイル:</strong> 利用条件を明記</li>
+                            <li><strong>バージョン情報:</strong> ファイル名にバージョン番号を含める</li>
+                            <li><strong>アップデート方法:</strong> 新バージョンのインストール方法を説明</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <h3>8.3 App Store配布（オプション）</h3>
+                <div class="substep">
+                    <h4>Apple Developer Programへの登録</h4>
+                    <p>App Storeでの配布を希望する場合：</p>
+                    
+                    <div class="info-box">
+                        <h4>📱 App Store配布の要件</h4>
+                        <ul>
+                            <li><strong>費用:</strong> Apple Developer Program 年額12,800円</li>
+                            <li><strong>審査:</strong> Appleの厳格な審査プロセス</li>
+                            <li><strong>メリット:</strong> 自動更新、セキュリティ、信頼性</li>
+                            <li><strong>収益:</strong> アプリが有料の場合、Appleが30%の手数料</li>
+                        </ul>
+                    </div>
+
+                    <h4>審査準備のチェックリスト</h4>
+                    <ul>
+                        <li>☐ <strong>アプリアイコン</strong>: 全サイズ完備</li>
+                        <li>☐ <strong>スクリーンショット</strong>: アプリの動作を示すもの</li>
+                        <li>☐ <strong>プライバシーポリシー</strong>: データ収集に関する方針</li>
+                        <li>☐ <strong>利用規約</strong>: アプリの利用条件</li>
+                        <li>☐ <strong>説明文</strong>: アプリの機能と特徴</li>
+                        <li>☐ <strong>キーワード</strong>: 検索用のキーワード設定</li>
+                    </ul>
+                </div>
+
+                <h3>8.4 継続的な保守・更新</h3>
+                <div class="substep">
+                    <h4>バージョン管理</h4>
+                    <p>アプリの継続的な改善のために：</p>
+                    
+                    <div class="best-practices">
+                        <h4>💡 保守のベストプラクティス</h4>
+                        <ul>
+                            <li><strong>定期更新:</strong> macOS新バージョンへの対応</li>
+                            <li><strong>バグ修正:</strong> ユーザーからの不具合報告への対応</li>
+                            <li><strong>機能追加:</strong> ユーザー要望に基づく新機能開発</li>
+                            <li><strong>API変更:</strong> OpenWeatherMap API仕様変更への対応</li>
+                        </ul>
+                    </div>
+
+                    <h4>自動更新機能の実装</h4>
+                    <div class="copyable-code">
+                        <button class="copy-button" onclick="copyToClipboard(this, 'auto-update')">📋 コピー</button>
+                        <pre><code id="auto-update">アプリ自動更新機能を追加してください:
+
+要件:
+- GitHub Releasesからの更新チェック
+- 新バージョン通知
+- ワンクリック更新機能
+- 更新履歴の表示
+
+使用フレームワーク:
+Sparkle framework（macOS標準的な更新機能）</code></pre>
+                    </div>
+
+                    <div class="info-box">
+                        <h4>🔄 更新戦略</h4>
+                        <ul>
+                            <li><strong>メジャー更新:</strong> 大きな機能追加（1.0 → 2.0）</li>
+                            <li><strong>マイナー更新:</strong> 小さな機能追加（1.0 → 1.1）</li>
+                            <li><strong>パッチ更新:</strong> バグ修正のみ（1.0.0 → 1.0.1）</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="step">
+                <h2>🎉 完成おめでとうございます！</h2>
+                <p>あなた専用のmacOS天気メニューバーアプリが完成しました。</p>
+                
+                <div class="feature-showcase">
+                    <h4>✨ 達成したもの</h4>
+                    <ul>
+                        <li>リアルタイム気象データ表示</li>
+                        <li>美しいメニューバーUI</li>
+                        <li>詳細な気象情報ポップオーバー</li>
+                        <li>自動データ更新機能</li>
+                        <li>カスタマイズ可能な設定</li>
+                    </ul>
+                </div>
+
+                <div class="info-box">
+                    <h4>📚 学習体験</h4>
+                    <p>このプロジェクトを通じて以下の技術に触れることができました：</p>
+                    <ul>
+                        <li><strong>Swift & SwiftUI:</strong> macOSアプリ開発の基礎</li>
+                        <li><strong>API統合:</strong> RESTful APIの活用方法</li>
+                        <li><strong>非同期処理:</strong> async/awaitパターン</li>
+                        <li><strong>macOS統合:</strong> メニューバーアプリの実装</li>
+                        <li><strong>AI開発:</strong> Claude Codeによる効率的な開発</li>
+                    </ul>
+                </div>
+
+                <div class="best-practices">
+                    <h4>🚀 次のステップ</h4>
+                    <ul>
+                        <li><strong>機能拡張:</strong> このガイドの手順7で追加機能を実装</li>
+                        <li><strong>他の地点:</strong> 家族や友人の住む地域の天気も追加</li>
+                        <li><strong>オリジナル機能:</strong> 独自のアイデアで機能追加</li>
+                        <li><strong>配布:</strong> 友人や同僚と共有</li>
+                        <li><strong>他のアプリ:</strong> 学んだ技術で新しいアプリに挑戦</li>
+                    </ul>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <script>
+        function copyToClipboard(button, elementId) {
+            const element = document.getElementById(elementId);
+            const text = element.textContent;
+            
+            navigator.clipboard.writeText(text).then(function() {
+                button.textContent = '✅ コピー済み';
+                button.classList.add('copied');
+                
+                setTimeout(function() {
+                    button.textContent = '📋 コピー';
+                    button.classList.remove('copied');
+                }, 2000);
+            }, function(err) {
+                console.error('コピーに失敗しました: ', err);
+            });
+        }
+    </script>
+</body>
+</html>
